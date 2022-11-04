@@ -1,0 +1,3242 @@
+<!DOCTYPE html>
+<html lang="sw">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eco Ops App plastics cleanup, compost, plant nursery, soil regenerative farming, and food forest carbon token & biodiversity credit validation system</title>
+  <meta description=" Designed for economic community development through cooperation and representation, education, and representation for the poorest billion people and their peers who desire transparent business process automation.">
+
+  <!-- Eco Ops App  operates with local storage, using the browser as a key value- store -->
+  <!-- data is stored in json data strings in the localstorage, and exchanged with other users --> 
+  <!-- supabase.io free level service is used as the cloud data storage system -->
+  <!-- data export is geojson format -->
+	
+  <!-- Designed for economic community development through cooperation and representation, education, -->
+  <!--  and representation for the poorest billion people and their peers who desire transparent business process automation -->
+
+  <!--  Sustainable Community Development Hub -->
+  <!--  P.O. Box 911 Nederland, CO 80466 -->
+	
+  <link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+  integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+  crossorigin="anonymous"
+  />
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Sortable/1.14.0/Sortable.min.js" integrity="sha512-zYXldzJsDrNKV+odAwFYiDXV2Cy37cwizT+NkuiPGsa9X1dOz04eHvUWVuxaJ299GvcJT31ug2zO4itXBjFx4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+ 
+	
+	
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+  <!--          <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@0.4.1/dist/leaflet.draw.css" /> -->		
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.css" />
+  <!--          <script src="/leaflet.draw.0.4.0.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.draw/1.0.4/leaflet.draw.js" integrity="sha512-ozq8xQKq6urvuU6jNgkfqAmT7jKN2XumbrX1JiB3TnF7tI48DPI4Gy1GXKD/V3EExgAs1V+pRO7vwtS1LHg0Gw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!--		<script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/0.0.124/turf.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Turf.js/5.1.5/turf.js"></script>
+  <!--  https://cdnjs.cloudflare.com/ajax/libs/Turf.js/0.0.124/turf.min.js   -->
+  <!---	<script src="src/components/MapPolylineIntersections.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/leaflet.locatecontrol@0.76.0/src/L.Control.Locate.js"></script>
+  <script src="https://unpkg.com/@supabase/supabase-js"></script>	
+  <link rel="stylesheet" href="https://ecoops.vercel.app/css/style.css" />
+</head>
+<body>
+		
+  <ion-app>
+    <ion-menu content-id="main-content">
+      <ion-header>
+        <ion-toolbar color="success">
+          <ion-title>Eco Ops App</ion-title>
+        </ion-toolbar>
+      </ion-header>
+
+      <ion-content>
+        <ion-list>
+         <ion-list-header id="menu_header" style="background:url(/icons/header.png);"><div id="0greeting" style="width:100%;height:100%;"><span id="switch_to_homee">👌🏅🕯</span></div></ion-list-header>
+	
+		<button onclick="amharic()">ምናሌ</button>
+		<button onclick="arabic()">عربي</button>
+		<button onclick="bengali()">B</button>
+		<button onclick="chinese()">中文</button>
+		<button onclick="eng()">En</button>
+		<button onclick="hawaiian()">Ōlelo</button>
+		<button onclick="french()">F</button>
+		<button onclick="russian()">R</button>
+		<button onclick="spanish()">S</button>
+		<button onclick="sheng()">Sw</button>
+		<button onclick="turkish()">T</button>		 
+		<button onclick="portuguese()">P</button>
+		<button onclick="hindi()">H</button>
+		<button onclick="indomalay()">Im</button>
+		<button onclick="japanese()">言語</button>
+
+          <ion-menu-toggle auto-hide="false"> 
+
+            <ion-item button>
+              <ion-icon slot="1" data-src="ma leaflet open map"></ion-icon>
+              <ion-label id="0maleaf"> Ma leaf </ion-label>
+            </ion-item>	
+	    <ion-item button>
+              <ion-icon slot="2" data-src="DownloadsAndReports"></ion-icon>
+              <ion-label id="0pakuayako" > Pakua data na ripoti yako </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="3" data-src="Orodha ya ma orodha"></ion-icon>
+              <ion-label id="0orodha" > Orodha ya ma orodha </ion-label>
+            </ion-item>
+	    <ion-item button>
+              <ion-icon slot="4" data-src="Selecta"></ion-icon>
+              <ion-label id="0selecta"> Selecta </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="5" data-src="Kusafisha"></ion-icon>
+              <ion-label id="0kusafisha"> Kusafisha </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="6" data-src="Kwachk"></ion-icon>
+              <ion-label id="0kwachk"> Kwachk </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="7" data-src="Arega / Kusaga"></ion-icon>
+              <ion-label id="0arega"> Arega / Kusaga </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="8" data-src="Ma Broke"></ion-icon>
+              <ion-label id="0mabroker"> Ma Broker </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="9" data-src="Ma Broke"></ion-icon>
+              <ion-label id="0footsoldiers"> Ma Foot Soldiers </ion-label>
+            </ion-item>		  
+            <ion-item button>
+              <ion-icon slot="10" data-src="Boiler Pusha"></ion-icon>
+              <ion-label id="0pusha"> Boiler Pusha </ion-label>
+            </ion-item>
+	    <ion-item button>
+              <ion-icon slot="11" data-src="Mould Ya Presha"></ion-icon>
+              <ion-label id="0presha"> Mold Ya Presha </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="12" data-src="Gas Ngata / Dizo"></ion-icon>
+              <ion-label id="0dizo"> Gas Ngata / Dizo </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="13" data-src="Gas Cooker"></ion-icon>
+              <ion-label id="0gascooker"> Gas Cooker </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="14" data-src="Gas Cooker / Gas Tangi"></ion-icon>
+              <ion-label id="0gastangi"> Gas Tangi </ion-label>
+            </ion-item>		  
+            <ion-item button>
+              <ion-icon slot="15" data-src="Kumaintain / kukacheza"></ion-icon>
+              <ion-label id="0kumaintain"> -- Kumaintain / kukacheza </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="16" data-src="Stingo za ndifu"></ion-icon>
+              <ion-label id="0stingozandifu"> -- Stingo za ndifu </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="17" data-src="ma Xchange"></ion-icon>
+              <ion-label id="0maxchange"> -- ma Xchange </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="18" data-src="Stingo za ndifu"></ion-icon>
+              <ion-label id="0carboncredit"> -- Carbon Credit </ion-label>
+            </ion-item>
+            <ion-item button>
+              <ion-icon slot="19" data-src="ma Xchange"></ion-icon>
+              <ion-label id="0nfthub"> -- NFT Hub </ion-label>
+            </ion-item>	
+	    <ion-item button>
+              <ion-icon slot="20" data-src="ma Xchange"></ion-icon>
+              <ion-label id="0profile"> -- Settings </ion-label>
+            </ion-item>	
+	    <ion-item button>
+              <ion-icon slot="21" data-src="mbinu "></ion-icon>
+              <ion-label id="0mbinu"> Mbinu </ion-label>
+            </ion-item>	
+	    <ion-item button>
+              <ion-icon slot="22" data-src="jinsi ya kushiriki"></ion-icon>
+              <ion-label id="0jinsiya"> Jinsi ya kushiriki </ion-label>
+            </ion-item>			  
+		  
+          </ion-menu-toggle>
+	    <ion-item><br>Eco Ops App &nbsp; <a href="https://github.com/biomassives/ionic-vanilla-js/archive/refs/heads/eco-ops-app.zip">free software</a>.</ion-item>
+	    <ion-item><img src=/wheredifrom_zucchini-bread.png width=100%></ion-item>	
+
+
+		
+		
+        </ion-list>	      	      	   	      
+      </ion-content>
+    </ion-menu>
+
+	  		
+	  
+    <ion-page class="ion-page" id="main-content">
+      <ion-header>
+        <ion-toolbar>
+          <ion-buttons slot="start">
+            <ion-menu-toggle>
+              <ion-button>
+                <ion-icon slot="icon-only" data-src="menu.svg"></ion-icon>
+              </ion-button>
+            </ion-menu-toggle>  
+          <ion-title id="page_title_header" slot="start">Usawa Mazingira</ion-title>
+	</ion-buttons>
+	<ion-buttons slot="end">
+          <ion-button id="avatar" src="/icons/profile.svg">
+            <ion-icon slot="icon-only" name="avatar"></ion-icon>
+          </ion-button>
+        </ion-buttons>									  
+	  </ion-toolbar>
+      </ion-header>
+      <ion-content class="ion-padding">
+	
+	      
+	      <div id="mbinu" style="display:none;">
+		      <h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_home"> <span id="mbinu_title">Mbinu</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_jinsiya"></h1>
+
+		      The Eco Ops App is designed to support community level validation of carbon credit earning actions.
+		      <ol>
+			      <li>Add witnesses to document work your/ your group's work.</li>
+	      		      <li>Log your carbon negative actions ( compost, plastics diversion, plant nursery, trees, crop improvement, etc.</li>
+	      		      <li>Review your reports, customize them.</li>
+		      	      <li>Customize your project support & carbon credit sales page.</li>
+	         	      <li>Add your mpesa/ paypal/ or crypto payout settings.</li>
+		      </ol>
+			
+		      
+		      <div class="container">
+  <h2>Frequently Asked Questions</h2>
+  <div class="accordion">
+    <div class="accordion-item">
+      <button id="accordion-button-1" aria-expanded="false"><span class="accordion-title">Add your project location to the map and label it.</span><span class="icon" aria-hidden="true"></span></button>
+      <div class="accordion-content">
+        <p>Announce your project or project idea. ( <a href="http://mylunch.link:4567">http://mylunch.link</a> )</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button id="accordion-button-2" aria-expanded="false"><span class="accordion-title">Document your work</span><span class="icon" aria-hidden="true"></span></button>
+      <div class="accordion-content">
+        <p>Log your carbon negative actions ( compost, plastics diversion, plant nursery, trees, crop improvement, etc.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button id="accordion-button-3" aria-expanded="false"><span class="accordion-title">Reporting</span><span class="icon" aria-hidden="true"></span></button>
+      <div class="accordion-content">
+        <p>You can customize and review your reports any time.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button id="accordion-button-4" aria-expanded="false"><span class="accordion-title">Set up payment method</span><span class="icon" aria-hidden="true"></span></button>
+      <div class="accordion-content">
+        <p> Configure Eco Ops app to accept payments & disburse funds from from mpesa/ paypal/ and/or crypto.</p>
+      </div>
+    </div>
+    <div class="accordion-item">
+      <button id="accordion-button-5" aria-expanded="false"><span class="accordion-title">Add witnesses</span><span class="icon" aria-hidden="true"></span></button>
+      <div class="accordion-content">
+        <p> When documenting your work, ask a friend, peer, mentor, co-worker, assistant, .. to sign as a witness.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+const items = document.querySelectorAll(".accordion button");
+
+function toggleAccordion() {
+  const itemToggle = this.getAttribute('aria-expanded');
+  for (i = 0; i < items.length; i++) {
+    items[i].setAttribute('aria-expanded', 'false');
+  }
+ 
+  if (itemToggle == 'false') {
+    this.setAttribute('aria-expanded', 'true');
+  }
+}
+
+items.forEach(item => item.addEventListener('click', toggleAccordion));    
+</script>		      
+	      </div>
+	      <div id="jinsiya" style="display:none;">
+		      <h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mbinu"> <span id="jins_title">Jinsi Ya</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mapp"></h1>
+	      </div>	      
+	      <div id="pakuayako" style="display:none;">
+		      
+
+		      <p id="pakuayako_info" style="display:none;"> 
+
+		      </p>	
+	      
+	            <script src="https://unpkg.com/docx@7.1.0/build/index.js"></script>
+		    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.8/FileSaver.js"></script>
+
+
+                     <h1 id="pakuayako_title">Your reports</h1>
+
+		      <p>
+                     <button id="compost_report" type="button" onclick="generatedoc1()">Compost & Plastics Diversion Report</button>
+		      </p>
+                     <button type="button" onclick="generatedoc2()">Nursery management report</button>
+		      
+		    	<table><tr><Td>
+			      <ul>
+				<li>Timesheets, hours worked/volunteered</li>
+				<li>Contributions report</li>
+			      	<li>Balance sheet</li>
+			      </ul>
+		        </td><td>
+			      <ul>
+				<li>Training sessions</li>		      
+				<li>Certifications</li>
+	      		      </ul>
+			</td></tr></table>
+
+            <script>  		  
+		    		    
+	function generatedoc2() {
+	      var referrer = localStorage.getItem("user");
+		try {
+	      		console.log("user/ referrer :" + referrer );
+	      	}
+		      	catch(err) {
+		console.log("no user/ referrer");
+	      	
+		}
+		
+
+		var placheckins = localStorage.getItem("plasticsCheckinIndex");
+		try {
+	      		console.log("plasticsCheckinIndex :" + placheckins );
+	      	}
+		      	catch(err) {
+		console.log("no data/ plastsics");
+	      	
+		}
+
+		
+		
+		var compocheckins = localStorage.getItem("compostableCheckinIndex");
+		try {
+	      		console.log("compostablesCheckinIndex :" + compocheckins );
+	      	}
+		      	catch(err) {
+		console.log("no data/ compostables");
+	      	
+		}
+
+		var witne = localStorage.getItem("ecoopswitnessIndex");
+		try {
+	      		console.log("compostablesCheckinIndex :" + witne );
+	      	}
+		      	catch(err) {
+		console.log("no data/ svg witness signatures");
+	      	
+		}
+		
+		
+		
+              const doc = new docx.Document({
+                sections: [
+                  {
+		   headers: {
+			default: new Header({
+			    children: [new Paragraph("Eco Ops App 2022 v1")],
+			}),
+		    },
+		    footers: {
+			default: new Footer({
+			    children: [new Paragraph("Eco Ops App supports\r transparent community level project verification.")],
+			}),
+		    },
+                    properties: {},
+                    children: [
+                      new docx.Paragraph({
+                        children: [
+                          new docx.TextRun("Eco Ops Project Participant Report"),
+                          new docx.TextRun({
+                            text: referrer,
+                            bold: true
+                          }),
+			  new docx.TextRun({
+                            text: " ~ plastics diversion, composting and organics, plant nurseries, climate reslilient food systems, tree planting and tree care, wildlife-human interface mitigation toward mutual benefit..",
+                            bold: false
+                          }),
+			  new docx.TextRun({
+                            text: referrer,
+                            bold: true
+                          }),	
+			  new docx.TextRun({
+                            text: placheckins + " ~ plastics diversion ",
+                            bold: false
+                          }),					
+                          new docx.TextRun({
+                            text: "\tEco Ops Report 2022",
+                            bold: true
+                          })
+                        ]
+                      })
+                    ]
+                  }
+                ]
+              });
+
+              docx.Packer.toBlob(doc).then((blob) => {
+                console.log(blob);
+                saveAs(blob, "ecoops_report_2022.docx");
+                console.log("Document 1 created successfully");
+              });
+            }
+		    
+		    
+		    
+		    
+		    
+              function generatedoc1() {
+	        var referrer = localStorage.getItem("user");
+		try {
+	      		console.log("user/ referrer :" + referrer );
+	      	}
+		      	catch(err) {
+		console.log("no user/ referrer");	      	
+		}
+		      
+		var placheckins = localStorage.getItem("plasticsCheckinIndex");
+		try {
+	      		console.log("plasticsCheckinIndex :" + placheckins );
+	      	}
+		      	catch(err) {
+		console.log("no data/ plastsics");	      	
+		placheckins = "no plastsics data available"				
+		}
+				
+		var compocheckins = localStorage.getItem("compostableCheckinIndex");
+		try {
+	      		console.log("compostablesCheckinIndex :" + compocheckins );
+	      	}
+		      	catch(err) {
+		compocheckins = "no data/ compostables"
+		console.log("no compostables data available");
+		}		      
+		      
+		      
+		      
+              const doc = new docx.Document({
+                sections: [
+                  {
+                    properties: {},
+                    children: [
+                      new docx.Paragraph({
+                        children: [
+                          new docx.TextRun("Eco Ops Project Participant Report\n\n\r\r Hello new line?"),
+                          new docx.TextRun({
+                            text: referrer,
+                            bold: true
+                          }),
+			  new docx.TextRun({
+                            text: " ~ plastics diversion, composting and organics, plant nurseries, climate reslilient food systems, tree planting and tree care, wildlife-human interface mitigation toward mutual benefit..",
+                            bold: false
+                          }),
+                          new docx.TextRun({
+                            text: "\tEco Ops Report 2022",
+                            bold: true
+                          })
+                        ]
+                      }),
+                     new docx.Paragraph({
+                        children: [ 
+ 			  new docx.TextRun("")
+                        ]
+                      }),			    
+		      new docx.Paragraph({
+                        children: [
+                          new docx.TextRun( compocheckins ),
+                          new docx.TextRun({
+                            text: referrer,
+                            bold: true
+                          }),
+			  new docx.TextRun({
+                            text: " ~ plastics diversion, composting and organics, plant nurseries, climate reslilient food systems, tree planting and tree care, wildlife-human interface mitigation toward mutual benefit..",
+                            bold: false
+                          }),
+                          new docx.TextRun({
+                            text: placheckins,
+                            bold: true
+                          })
+                        ]
+                      })
+                    ]	  		  
+                  }
+                ]
+              });
+
+              docx.Packer.toBlob(doc).then((blob) => {
+                console.log(blob);
+                saveAs(blob, "ecoops_report_2022.docx");
+                console.log("Document 1 created successfully");
+              });
+            }
+            </script>
+	      
+	      
+	      
+		      <a class="btn" id="mapdata" href="#open-modal">👋 Map data</a>      
+		      <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		      <canvas id="pukuayakoChart" width="400" height="400"></canvas>
+			<script>
+			const ctx = document.getElementById('pukuayakoChart');
+			const pukuayakoChart = new Chart(ctx, {
+			    type: 'bar',
+			    data: {
+				labels: ['Plastics Diverted', 'Compost Diversion', 'Participation', 'Training', 'Labor', 'Donations'],
+				datasets: [{
+				    label: '# of Votes',
+				    data: [12, 19, 3, 5, 2, 3],
+				    backgroundColor: [
+					'rgba(255, 99, 132, 0.2)',
+					'rgba(54, 162, 235, 0.2)',
+					'rgba(255, 206, 86, 0.2)',
+					'rgba(75, 192, 192, 0.2)',
+					'rgba(153, 102, 255, 0.2)',
+					'rgba(255, 159, 64, 0.2)'
+				    ],
+				    borderColor: [
+					'rgba(255, 99, 132, 1)',
+					'rgba(54, 162, 235, 1)',
+					'rgba(255, 206, 86, 1)',
+					'rgba(75, 192, 192, 1)',
+					'rgba(153, 102, 255, 1)',
+					'rgba(255, 159, 64, 1)'
+				    ],
+				    borderWidth: 1
+				}]
+			    },
+			    options: {
+				scales: {
+				    y: {
+					beginAtZero: true
+				    }
+				}
+			    }
+			});
+			</script>
+		      
+		      
+	      </div>  
+	      <div id="greeting"><h1 id="greeting_content">Ngive ya Gabo -  Usawa Mazingwasa 
+		      <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mappo"></h1>		      
+		      <div id="container">
+			    <input id="tab-1" type="radio" name="tab-group" checked="checked" />
+			    <label for="tab-1">Participants</label>
+			    <input id="tab-2" type="radio" name="tab-group" />
+			    <label for="tab-2">Methods </label>
+			    <input id="tab-3" type="radio" name="tab-group" />
+			    <label for="tab-3">Fund it!</label>
+			    <div id="content">
+				<!--Contenido de la Pestaña 1-->
+				<div id="content-1">
+				    <p class="left"><img src="/garbagemap_logo_80px_h_june_16_2022.png" style="height:135px;" alt="Garbage map upstream producer responsibility waste mapping project."><img src="/theme/mupy1/mmwtt.png"  style="height:135px;" alt="Traditional knowledge and ecological stewarship. Strategic partnrships.">
+
+					    <img src="/theme/mupy1/ecoops_logo_an2.gif" width=220 height=226 id="ecoopsLogo">
+					    <br>
+					    Earth's poorest billion people depend upon ecosystem vitality.
+				    </p>
+				    <p class="left"> Peer verification support for climage credit worthy activies. </p>
+					<p class="left"> intrinsic value: forests, clean rivers, air quality, wildlife. </p>
+					
+					<p class="left">Develop your own portfolio here of climate credit production actions. Mentor support and peer verification available <a href="http://mylunch.link:4567">pls coordinate here</a>.
+					</p> 
+					
+					<p> ~  <button id="0compost" >compost</button>
+				        ~  <button id="0trees" >trees</button> 
+					~  <button id="0nursery" >nursery</button> </p>
+					
+					<div class="ibuttons">
+						<div class="square blue"><i class="fa fa-coffee" aria-hidden="true"></i></div>
+						<div class="square red"><i class="fa fa-fire" aria-hidden="true"></i></div>
+						<div class="square green"><i class="fa fa-book" aria-hidden="true"></i></div>
+	    				</div>
+
+										
+				</div>
+				<!--Contenido de la Pestaña 2-->
+				<div id="content-2">
+				    <p class="column-left"><img src="/theme/mupy1/taka-taka-flow.webp" alt=""> Transparentify your waste management, food, energy, and water system collaborations now. </p>
+				<p class="column-right"><img src="https://scdhub.org/images/logo.svg" alt=""> SCD Hub (Partner US 501c3 ) supports this project & app via mentoring & research collaborations in recycling, compost, garden, trees, waste mapping, food food forests, & carbon credit market development.</p>
+				</div>
+				<!--Contenido de la Pestaña 3-->
+				<div id="content-3">
+					<p>Circular economies keep money in the community</p>
+					<ul>
+						<li>Renewal is possible both human and ecological.</li>
+
+						<li>The reports you generate here are designed to support  carbon credit transactions.</li>
+						<li>Waste stream management, soil improvement, nursery garden, and long term tree plantings.</li>
+					</ul>
+					<p>'Eco Ops App' is essentially an activities planner & documenter for group and individual 'sweat equity' benefits. (supplies, equipment, expertise, labor, raw materials, ..)   </p>
+				</div>
+			    </div>				
+              </div>
+		      
+		      
+              <div id="welcomepopupContainer">
+			<section class="plan cf">		        
+				<h2>Choose a focus area:</h2>
+						        
+				
+					<input type="radio" name="radio1" id="plasticsradio" value="plastics"><label class="free-label four col" for="free">Plastics</label>
+					<input type="radio" name="radio1" id="compostradio" value="compost"><label class="free-label four col" for="free">Compost</label>
+					<input type="radio" name="radio1" id="treesradio" value="trees" checked><label class="basic-label four col" for="basic">Trees</label>
+					<input type="radio" name="radio1" id="nurseriesradio" value="nurseries"><label class="premium-label four col" for="premium">Nurseries</label>
+				
+
+			</section>
+			      
+
+	      </div>	      	       	      
+	      <div id="donation" style="display:none;">
+
+		   			      
+                        <section id="donatedialogue">
+				If possible, support this work by helping to ensure that phones and data plans are available to eco club facilitators. - Sept 2022 .  
+				You can support the growth of eco clubs & eco clubs' projects and workshops by donating below.
+			</section>
+			<section class="payment-plan cf">
+				<h2>Select a payment plan:</h2>
+				<input type="radio" name="radio2" id="monthly" value="monthly" checked><label class="monthly-label four col" for="monthly">Monthly</label>
+				<input type="radio" name="radio2" id="yearly" value="yearly"><label class="yearly-label four col" for="yearly">Yearly</label>
+			</section>
+			<section class="payment-type cf">
+				<h2>Select a payment type:</h2>
+				<input type="radio" name="radio3" id="credit" value="credit"><label class="credit-label four col" for="credit">Credit Card</label>
+				<input type="radio" name="radio3" id="debit" value="debit"><label class="debit-label four col" for="debit">Debit Card</label>
+				<input type="radio" name="radio3" id="paypal" value="paypal" checked><label class="paypal-label four col" for="paypal">Paypal</label>
+			</section>	
+			<input class="submit" type="submit" value="Submit">		
+		        </div>
+
+
+
+		      
+		      
+		      
+
+
+		      
+		      
+
+	      </div>
+	       	      
+	      <div id="compost" style="display:none;">
+		<h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_jins"> 
+			<span id="compost_title"> Compost </span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_trees"></h1>				      	  	       		      
+
+		        <img src="/theme/mupy1/compost_garbagemap0.webp" width=400 height=179 align=left>
+
+		      	      <form id="compostables_checkin" onsubmit="checkin1()">
+
+			  <b>Material type:</b>
+  			  <br>
+			      <select id="ldcompostabletype">
+				  <option value=compostable>Compostable</option>
+				  <option value=compost_product>Compost Product</option>
+				  <option value=soil_amendment_hoofhornhair>Hoof /Horn /Hair soil amendment</option>
+				  <option value=compost_greens>Green Compostables</option>
+				  <option value=compost_browns>Dried Compostables</option>
+				  <option value=ag_waste>Agriultural Waste</option>
+				  <option value=compost_mycelia>Mycelia</option>
+				  <option value=worm_castings>Worm castings</option>	
+			      </select>
+			      
+  			  <br>
+			  <b>Weight:</b>
+			      <br>
+				      	<input type=text name="ld-weight" id="ldcompostableweightkg" size="5"> kg
+  			      <br>
+			      
+			  <b>Provider:</b>
+			      <br>
+			      <input type=text name="ld-provider" id="ldcompostableprovider">  <div id="overlay"><b>±</b></div> 
+  			      <br>
+				      
+			      <b>Witness: <a href="/js/">(+)</a></b>
+			      <br>
+			      <select id="ldcompostablewitness">
+				 <script>	
+ 					 Element.prototype.appendAfter = function(element) {
+					   element.parentNode.insertBefore(this, element.nextSibling);
+					 }, false;
+					 
+					 function onlyUnique(value, index, self) {
+						  return self.indexOf(value) === index;
+						}
+											 					 
+					 var witnessIndex = localStorage.getItem("ecoopswitnessIndex");
+					 var witnessArr = witnessIndex.split(',');
+					 witnessArr = witnessArr.filter(onlyUnique);
+					 
+					 witnessArr.forEach(element => {
+						    const splitArr = element.split('_');
+         					    select = document.getElementById('ldcompostablewitness');
+						    var opt = document.createElement('option');
+						    opt.value = splitArr[1];
+						    opt.innerHTML = splitArr[1];
+						    select.appendChild(opt);
+					 });
+					 					 					 					 
+			         </script>
+			      </select>
+			      <br>	      
+			      
+  			  <b>Notes:</b>
+  			  <br>
+			      
+  			  <textarea id="ldcompostabledescription" rows="4" cols="30"></textarea>
+  			  <br><br>
+				      
+				      
+				      
+		         <input type=submit id="checkin1submit" onsubmit="checkin1()" value="Record Entry"> 
+ 
+				      <p id="checkin1response"></p>
+			</form>		        	      
+
+			        
+			      
+
+		      <br><br><br>
+		      
+		<table class="table table-sm table-striped table-sortable" style="table-layout: fixed;">
+		<thead>
+			<tr>
+				<th data-sort="date">Date</th>
+				<th data-sort="string">Item Type</th>
+				<th data-sort="string">Provider</th>
+				<th data-sort="float">Weight</th>
+				<th data-sort="int">Witness</th>
+				<th data-sort="string">Notes</th>
+			</tr>
+		</thead>
+		<tbody id="checkin1TableContent"> 
+		</tbody>
+	</table>
+		 
+		      
+		      
+	    
+	      
+	    
+	    
+	    
+	    
+	      </div>
+	      
+	      
+	      
+	      <div id="trees" style="display:none;">
+		<h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_comp"> 
+			<span id="trees_title"> Trees </span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_nursery"></h1>
+	      </div>
+	      <div id="nursery" style="display:none;">
+		<h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_tree"> 
+			<span id="nursery_title"> Nursery </span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_resourcemap"></h1>
+
+
+		      
+		      
+	    
+	    
+	      </div>
+	      
+	
+	      <div id="resourcemap" style="display:none;">
+		<h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_nurs"> 
+			<span id="resourcemap_title"> Resource Map </span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_orodha"></h1>
+	      </div>
+
+
+	      <div id="map" style="width: 100%; height: 600px; border: 1px solid #ccc; display:none;"></div>
+
+	      <div id="mapbuttons" style="display:none;">
+		<button id="saveleafletdata">Save</button>
+		<button id="loadData">Load</button>
+		<button id="loadData2">Polygon</button>
+		<button id="newbutton">New</button>
+	      </div>
+
+	      
+	      
+	    
+	    
+	    
+	    
+	    
+	      
+	      <div id=orodha style="display:none;"><img src="/theme/mupy1/plastics_weigh_station_witness_and_scale_operator800.JPG" width="360" height="360" align="left"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_map"> <span id="orod_title">Orodoha Ya Ma Orodoha</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_selecta"></h1>		      
+		      		      
+
+		      
+		      
+		      <div id="orod_cont" style="display:flex;">
+			      
+			      
+			      
+
+			      
+			  			      
+		      <form id="plastics_checkin" onsubmit="checkin0()">
+
+			  <b>Material type:</b>
+  			  <br>
+			      <select id="ldplastictype">
+				  <option value=PET>PETE</option>
+				  <option value=HDPE>HDPE</option>
+				  <option value=PVC>PVC</option>
+				  <option value=LDPE>LDPE</option>
+				  <option value=PP>PP</option>
+				  <option value=PS>PS</option>
+				  <option value=mixed_plastics>Mixed</option>
+			      </select>
+			      
+  			  <br>
+			  <b>Weight:</b>
+			      <br>
+				      	<input type=text name="ld-weight" id="ldweightkg" size="5"> kg
+  			      <br>
+			      
+			  <b>Provider:</b>
+			      <br>
+			      <input type=text name="ld-provider" id="ldprovider">  <div id="overlay"><b>±</b></div> 
+  			      <br>
+				      
+			      <b>Witness: <a href="/js/">(+)</a></b>
+			      <br>
+			      <select id="ldwitness">
+				 <script>	
+ 					 Element.prototype.appendAfter = function(element) {
+					   element.parentNode.insertBefore(this, element.nextSibling);
+					 }, false;
+					 
+					 var witnessIndex = localStorage.getItem("ecoopswitnessIndex");
+					 witnessArr = witnessIndex.split(',');
+					 witnessArr.forEach(element => {
+						    const splitArr = element.split('_');
+         					    select = document.getElementById('ldwitness');
+						    var opt = document.createElement('option');
+						    opt.value = splitArr[1];
+						    opt.innerHTML = splitArr[1];
+						    select.appendChild(opt);
+					 });
+					 					 					 					 
+			         </script>
+			      </select>
+			      <br>	      
+			      
+  			  <b>Notes:</b>
+  			  <br>
+			      
+  			  <textarea id="lddescription" rows="4" cols="30"></textarea>
+  			  <br><br>
+			      
+  			  <input type="submit" name="submit" value="Record Checkin" onsubmit="checkin0()">
+			      
+			      				      <p id="checkin0response"></p>
+
+			</form>		        	      
+
+			        
+			      
+		</div>			      			    
+
+		      <br><br><br>
+		      
+		<table class="table table-sm table-striped table-sortable" style="table-layout: fixed;">
+		<thead>
+			<tr>
+				<th data-sort="date">Date</th>
+				<th data-sort="string">Item Type</th>
+				<th data-sort="string">Provider</th>
+				<th data-sort="float">Weight</th>
+				<th data-sort="int">Witness</th>
+				<th data-sort="string">Notes</th>
+			</tr>
+		</thead>
+		<tbody id="checkinTableContent"> 
+		</tbody>
+	</table>
+		 
+		      
+		     
+		      
+		      
+		      
+	      <br>		      
+	      </div>
+
+	      
+	      <div id=chaimocha style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_orod"> <span id="sele_title">Tests</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kusafisha"></h1>		      
+	      
+	        <script src="https://cdnjs.cloudflare.com/ajax/libs/mocha/8.0.1/mocha.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/chai/4.3.3/chai.min.js"></script>
+
+		<script>
+													
+			describe('Tests', function() {
+			    it('Simple Query', function(done) {
+
+				// assert.equal(2,3); //returns false
+				    
+				controller1.simpleQuery(true, 4, "hello", null, function(error, response, context) {
+
+				    assert.equal(2,3); //returns true
+				    done();
+
+				});
+
+			    });
+			});
+			
+			 			
+			 
+		</script>
+		      
+ 	      </div>
+	      
+	      
+	      
+	      <div id=selecta style="display:none;"><img src="/peerverified.svg" width="360" height="360" align="left"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_orod"> <span id="sele_title">Selecta</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kusafisha"></h1>		      
+		      		      
+
+		     
+		     
+		      
+		      
+	       </div>
+	      <div id=kusafisha style="display:none;"><img src="/theme/mupy1/kusafisha.gif" width="416" height="354" align="left"><h1 ><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_sele"> <span id="kusa_title">Kusafisha</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kwachk"></h1>
+		      		     		
+		      
+		      
+		<div id="kusa_queue">
+			<h2>Washed items queue</h2>
+		      </div>
+		      
+		<div id="kusa_log">
+			<h2>Log an item</h2>
+		      </div>
+		      
+	      <div id="kusa_cont" style="display:flex;">
+		      		      		    		   
+		       <form action=# id="checkin">
+
+			<div>
+			Washed Weight:
+				<input type=text name=checkinwt id=checkinwt>	   
+				</div>
+			<div>	
+			Item Type:
+				<input type=text name=checkinitem id=checkinitem>	   
+				</div>
+			<div>	
+			Weighed by:
+				<input type=text name=weighedby id=weighedby>	   
+				</div>
+			<div>	
+
+			       			Witnessed by:
+				<input type=text name=witnessedby id=witnessedby>	   
+
+				</div>
+			       
+			       
+			<input type=submit value=submit id=checkin onclick="checkin();" name=submit>
+		      </form>
+		      		      
+		      </div>      
+		       </div>
+	      <div id=kwachk style="display:none;"><h1 ><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kusa"> 
+		      <span id="kwac_title">Kwachk/ Uchukuzi</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_arega"></h1>
+		      
+		      <img src="/theme/mupy1/trushc1b.webp" width="400" height="275" align="left">
+		       </div>
+	      <div id=arega style="display:none;"><h1 ><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kwac"> 
+		      <span id="areg_title">Arega/ Kusaga</span>  <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mabroker"></h1>
+		      
+		      <form action="" id="myForm" onsubmit="chippingLog()">
+			      <p>
+			      batch: <input type="text" id="chipping_batch" name="chipping_bathc"></p>
+			      <p>
+			      amount: <input type="text" id="chipping_amount" name="chipping_amount"></p>
+			      <input type="submit" value="submit" name="submit">
+		      </form>
+		 	<script>
+				function chippingLog() {
+					  event.preventDefault()
+
+			      		  localStorage.setItem("lastname", "Word")
+				}
+        		</script>
+		      
+		     		      
+	      </div>
+	      <div id=mabroker style="display:none;"><h1 > <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_areg"> 
+		      <span id="mabr_title">mabroker</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_footsoldiers"></h1>
+
+	      
+	      
+	      </div>      
+	      <div id=footsoldiers style="display:none;"><h1 > <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mabr"> 
+		      <span id="mafo_title">footsoldiers</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_boilerpusha"></h1>
+
+
+		<form>
+		<p>
+			      materials inquiry: <textarea id="footsoldiers_inquiry" name="footsoldiers_inquiry"></textarea>
+		</p>
+				<p>
+			      source of material: <textarea id="footsoldiers_source" name="footsoldiers_source"></textarea>
+		</p>
+				<p>
+			      purchase price/ free: <input type="text" id="footsoldiers_source_price" name="chipping_bathc">
+		</p>
+		<p>
+			      desciption name of materials: <input type="text" id="footsoldiers_source_material" name="chipping_bathc">
+		</p>
+		<p>
+			      anticipated upcycling use case(s): <textarea id="footsoldiers_upcycling" name="footsoldiers_upcycling"></textarea>
+		</p>
+		
+			      <input type="submit" value="Generate Document" name="submit">
+		
+		
+	</form>
+		    <script>
+		      function mySave() {
+			var footsoldiers_inquiry = document.getElementById("footsoldiers_inquiry").value;
+			var footsoldiers_source = document.getElementById("footsoldiers_source").value;
+			var footsoldiers_source_material = document.getElementById("footsoldiers_source_material").value;
+			var footsoldiers_upcycling = document.getElementById("footsoldiers_upcycling").value;
+			var footsoldiers_upcycling = document.getElementById("footsoldiers_upcycling").value;
+			var myContent = document.getElementById("footsoldiers_inquiry").value;
+			localStorage.setItem("myContent", myContent);
+		      }
+		      function myLoad() {
+			var myContent = localStorage.getItem("myContent");
+			document.getElementById("myTextarea").value = myContent;
+		      }
+		    </script>
+		      
+		      
+		      <div id="container">
+   <div class="holder">
+     <div class="box" draggable="true">              </div>
+   </div>
+  
+   <div class="holder">  </div>
+   <div class="holder">  </div>
+   <div class="holder">  </div>
+   <div class="holder">  </div>
+   <div class="holder">  </div>
+   <div class="holder">   </div>
+   <div class="holder">  </div>
+   <div class="holder">  </div>
+     <div class="holder">  </div>
+</div>
+
+<script>
+  class App {
+
+  static init() {
+
+    App.box = document.getElementsByClassName('box')[0]
+
+    App.box.addEventListener("dragstart", App.dragstart)
+    App.box.addEventListener("dragend", App.dragend)
+
+    const containers = document.getElementsByClassName('holder')
+
+    for(const container of containers) {
+      container.addEventListener("dragover", App.dragover)
+      container.addEventListener("dragenter", App.dragenter)
+      container.addEventListener("dragleave", App.dragleave)
+      container.addEventListener("drop", App.drop)
+    }
+  }
+
+  static dragstart() {
+    this.className += " held"
+  
+    setTimeout(()=>this.className="invisible", 0)
+  }
+
+  static dragend() {
+    this.className = "box"
+  }
+
+  static dragover(e) {
+    e.preventDefault()
+  }
+
+  static dragenter(e) {
+    e.preventDefault()
+    this.className += " hovered"
+  }
+
+  static dragleave() {
+    this.className = "holder"
+  }
+
+  static drop() {
+    this.className = "holder"
+    this.append(App.box)
+  }
+
+}
+
+document.addEventListener("DOMContentLoaded", App.init)
+
+</script>
+
+
+		      		         		      		     		      
+		      		     		      		      
+	      </div>
+	      <div id=pusha style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mafo"> 
+		      <span id="pusha_title">Boiler Pusha</span>  <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_moldya"></h1>
+
+			<img src="/theme/mupy1/pyrrolysis_plant_drawing_mupyg.webp" align=right style="align:right;">
+
+		      
+		      <h3>Examples:</h3>
+		      1. <a href="https://www.youtube.com/watch?v=_pQNSjr64zI">Making roof panels from recovered plastics</a>
+		      <br>
+		      2. Precious plastic extruder production design sheets
+		      <br>
+		      3. Pressed plate metal on-site small window and roof panel production 
+		      <br>
+		      4. 3d printing with used plastics materials	      
+			      
+		      
+	      </div>
+	      <div id=presha style="display:none;"><h1 ><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_push"> 
+		      <span id="pres_title">Mold ya presha</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_dizoo"></h1>
+		      
+		      
+		    <textarea id="myTextarea" rows="10" cols="80"></textarea>
+		    <p></p>
+		    <button onclick="mySave()">Save</button>
+		    <button onclick="myLoad()">Load</button>
+		    <script>
+		      function mySave() {
+			var myContent = document.getElementById("myTextarea").value;
+			localStorage.setItem("myContent", myContent);
+		      }
+		      function myLoad() {
+			var myContent = localStorage.getItem("myContent");
+			document.getElementById("myTextarea").value = myContent;
+		      }
+		    </script>
+		      
+		      
+		      </div>
+	      <div id=dizo style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_pusha"> 
+		      <span  id="dizo_title">Dizo</span>  <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_gasacooker"></h1>
+		      <p>Using gas-to-liquids processes, refineries can convert some of their gaseous waste products (flare gas) into valuable fuel oils, which can be sold as is or blended only with diesel fuel. 
+		      <a href="https://en.wikipedia.org/wiki/Gas_to_liquids">wikipedia</a> </p>
+
+		      <img src="/process_meta_plastics_pyrolysis.png" align=left id="imgdizo">
+		      
+		      
+		      
+		      </div>
+	      <div id=gascooker style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_dizo"> 
+		      <span  id="gasc_title">Gas Cooker</span>  <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_gastangi"></h1>
+		      
+		      
+		      </div>
+	      <div id=gastangi style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_gasc"> 
+		      <span  id="gast_title">Gas Tangi</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kumaintain"></h1>
+		      		      <img src="/theme/mupy1/biodigester1.webp" width="400" height="300" align="left">
+		      
+		      Using gas vapor from biochar/ plastics pyrolysis  
+		      <p>
+			      1. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0306261917315003">Biomass gasification for syngas and biochar co-production: Energy application and economic evaluation</a>    
+		      </p>	      
+		      
+
+		      
+		      </div>
+	      <div id=kumaintain style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_gast"> 
+		      <span  id="kuma_title">Kumaintain / Kukacheza</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_stingozandifu"></h1>
+		      Maintanance of systems can be logged here. T
+
+		      	  			      
+		      <form id="maint_checkin">
+
+			  <b>Service provided:</b>
+  			  <br>
+			      <input id="mainttype" type=text>
+			      
+  			  <br>
+			  <b>Duration:</b>
+			      <br>
+				      	<input type=text name="ld-weight" id="durationhours" size="5"> Hours
+  			      <br>
+			      
+			  <b>Provider:</b>
+			      <br>
+			      <input type=text name="maint-provider" id="maintprovider">  <div id="overlay"><b>±</b></div> 
+  			      <br>
+				      
+			  <b>Witness: <a href="/js/">(+)</a></b>
+			      <br>
+			      <select id="maintwitness">
+				 <script>	
+ 					 Element.prototype.appendAfter = function(element) {
+					   element.parentNode.insertBefore(this, element.nextSibling);
+					 }, false;
+					 
+					 var witnessIndex = localStorage.getItem("ecoopswitnessIndex");
+					 witnessArr = witnessIndex.split(',');
+					 witnessArr.forEach(element => {
+						    const splitArr = element.split('_');
+         					    select = document.getElementById('maintwitness');
+						    var opt = document.createElement('option');
+						    opt.value = splitArr[1];
+						    opt.innerHTML = splitArr[1];
+						    select.appendChild(opt);
+					 });
+					 					 					 					 
+			         </script>
+			      </select>    
+			      <br>
+				      	<input type=text name="maint-witness" id="maintwitness">
+			      <br>	      
+			      
+  			  <b>Notes:</b>
+  			  <br>
+			      
+  			  <textarea id="maintnotes" rows="4" cols="30"></textarea>
+  			  <br><br>
+			      
+  			  <input type="submit" name="submit" id="maintcheckin" value="Create Log Entry">
+			</form>		        	      
+
+		      
+		      
+		      
+		      
+		      
+		      
+		      
+		      		<table class="table table-sm table-striped table-sortable" style="table-layout: fixed;">
+		<thead>
+			<tr>
+				<th data-sort="date">Date</th>
+				<th data-sort="string">Service Provided</th>
+				<th data-sort="string">Service Provider</th>
+				<th data-sort="float">Duration</th>
+				<th data-sort="int">Witness</th>
+				<th data-sort="string">Notes</th>
+			</tr>
+		</thead>
+		<tbody id="maintTableContent"> 
+		</tbody>
+	</table>
+		    		      
+		      
+		     </div>
+	      <div id=stingozandifu style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_kuma"> 
+		      <span  id="stin_title">Stingo Za Ndifu</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_maxchange"></h1>
+		      
+		      
+		     </div>
+	      <div id=maxchange style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_stin"> 
+		      <span  id="maxc_title">ma Xchange</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_nfthub"></h1>
+		      
+		      
+		      
+		      
+		      		      		<div id="world">
+			    <div class="column">
+				<h1>Task Manager</h1>
+				<div class="list-group-item" draggable="true">Wash Plastics</div>
+				<div class="list-group-item" draggable="true">Prepare Compost</div>
+				<div class="list-group-item" draggable="true">Build Water Filter</div>
+				<div class="list-group-item" draggable="true">Water Trees and Plants</div>
+				<div class="list-group-item" draggable="true">Sanitation</div>
+				<div class="list-group-item" draggable="true">Plastic to Fuel</div>
+			    </div>
+			    <div class="column">
+				<h1>In progress</h1>
+			    </div>
+			    <div class="column">
+				<h1>Paused</h1>
+			    </div>
+			    <div class="column">
+				<h1>Under Review</h1>
+			    </div>
+			    <div class="column">
+				<h1>Completed</h1>
+			    </div>
+		      		 		      		      
+			      </div>
+		      
+		      
+		      
+		      
+		      </div>
+	      <div id=nfthub style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_maxc"> 
+		      <span  id="nfth_title">NFT Hub</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_carboncredit"></h1>
+		      
+		      
+		      
+			    <div class="container">
+
+			    <div class="heroes">
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>
+				<div class="hero">
+				    <div class="image"></div>
+				</div>   
+			    </div>
+			    </div>
+			<style>	
+			.container .heroes{
+			    display: flex;
+			    flex-wrap: wrap;
+			    justify-content: center;
+			    background-color: orange;
+			    max-width: 700px;
+			    margin: 0 auto;
+			    padding: 40px 20px;
+
+			}
+			.container .heroes .hero{
+			    width: 80px;
+			    height: 84px;
+			    margin: 4px;
+			    border: 3px solid #fff;
+			    border-radius: 10px;
+			    box-sizing: border-box;
+			    background-color: #555;
+			    transform: skewX(-14deg);
+			    transition: 
+			      transform .1s 
+			      background-color 06s;
+			}
+			.container .heroes .hero:hover{
+			    background-color: #ff9c00;
+			    transform: skewX(-14deg) scale(1.3);
+			    z-index: 1;
+
+			}
+			.container .heroes .hero .image{
+			  width: 140%;
+			  height: 100%;
+
+			}
+			.container .heroes .hero::nth-child(1) .image{
+			  background-image: url("https://raw.githubusercontent.com/ParkYoungWoong/overwatch-hero-selector-vanilla/master/images/hero1.png");
+
+			}    
+			</style>
+
+
+
+			<form>
+				<h3 data-text="Choose Your Language">NFT Action</h3>
+				<label data-text="JavaScript">
+					<input type="radio" name="language" value="js"> Mint
+					<span class="dot"></span>
+					<span class="dot-shadow"></span>
+				</label>
+				<label data-text="PHP">
+					<input type="radio" name="language" value="php"> Collect
+					<span class="dot"></span>
+					<span class="dot-shadow"></span>
+				</label>
+				<label data-text="Python">
+					<input type="radio" name="language" value="py"> Sell Climate Credits
+					<span class="dot"></span>
+					<span class="dot-shadow"></span>
+				</label>
+				<label data-text="Swift">
+					<input type="radio" name="language" value="swift"> Promote
+					<span class="dot"></span>
+					<span class="dot-shadow"></span>
+				</label>
+			</form>
+
+
+		      
+		      </div>
+	      <div id=carboncredit style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_nfth"> 
+		      <span  id="carb_title">Carbon Credit Market</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_welcomeradio"></h1>
+
+		      <p>
+			      Carbon credits provided by smaller producers are attractive for  
+			      public users wishing to fund emergent leaders since cap and trade outcomes for large projects have generated sorted press.</p>
+		      <p>
+			      Eco Ops App addresses the two primary concerns. 'Double reporting' , 'project longevity 8', 'biodiversity benefit'.
+		      </p>
+	     
+
+			    
+			   
+	   </div>
+	      
+	      
+	      
+	        <div id=group style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_dizo"> 
+		      <span  id="gasc_title">Group</span>  <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_gastangi"></h1>
+		      
+
+			<h1 id=grouppageName>Your group</h1>			
+			<p id=grouppageDescrip>				
+			</p>
+			
+		      </div>
+			<script>
+			// if value is set in profile, update dom with profile data
+			 document.getElementById("grouppageName").innerHTML="Mamawatoto Eco School..";	
+			 document.getElementById("grouppageDescrip").innerHTML="the story of MMWTT began with ..";			
+			</script>
+
+	      
+	      <div id=welcomeradio style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_carb"> 
+		      <span  id="welc_title">Welcome Radio</span> <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_profile"></h1>
+
+		      <p>
+			      
+	      paris subway drummers 2013 via <a href="https://www.youtube.com/c/WorldStreetMusic">world street drummers</a>
+	      
+	      
+	            </p>
+			
+	   </div>
+	      
+	      
+	           <div id=settings style="display:none;">
+			   <h1><span id="sett_title">Settings</span></h1>
+
+			   
+			   Welcome, friend.
+		      
+		     	
+	  
+ 
+
+		      <form id="settings_update" onsubmit="updatesettings()">
+
+	      <div class="grid">
+			<div class="form-group a">
+				<label id="sett_bname_label" for="sett_bname">Business name</label>
+				<input id="sett_bname" type="text">
+			</div>
+	
+			<div class="form-group b">
+				<label id="sett_welcometext_label" for="sett_welcometext">Welcome Text</label>
+				<textarea id="sett_welcometext" type="text"></textarea>
+			</div>	
+		      <hr>
+		      
+		      	<div class="form-group a">
+				<label id="sett_blogposttitle_label" for="sett_blogposttitle">Blog post title</label>
+				<input id="sett_blogposttitle" type="text">
+			</div>
+		      
+		        <div class="form-group a">
+				<label id="sett_blogpostdate_label" for="sett_blogpostdate">Blog post date</label>
+				<input id="sett_blogpostdate" type="text">
+			</div>
+	
+			<div class="form-group b">
+				<label id="sett_blogtext_label" for="sett_blogtext">Post content</label>
+				<textarea id="sett_blogtext" type="text"></textarea>
+			</div>	
+   <hr>
+		      
+		      	<div class="form-group a">
+				<label id="sett_blogposttitle_label" for="sett_blogposttitle">Blog post title</label>
+				<input id="sett_blogposttitle" type="text">
+			</div>
+		      
+		        <div class="form-group a">
+				<label id="sett_blogpostdate_label" for="sett_blogpostdate">Blog post date</label>
+				<input id="sett_blogpostdate" type="text">
+			</div>
+	
+			<div class="form-group b">
+				<label id="sett_blogtext_label" for="sett_blogtext">Post content</label>
+				<textarea id="sett_blogtext" type="text"></textarea>
+			</div>	
+
+		      <hr>
+		      
+		         <hr>
+		      
+		      	<div class="form-group a">
+				<label id="sett_eventtitle_label" for="sett_eventtitle">Event title</label>
+				<input id="sett_eventtitle" type="text">
+			</div>
+		      
+		        <div class="form-group a">
+				<label id="sett_eventdate_label" for="sett_eventdate">Event date</label>
+				<input id="sett_eventdate" type="text">
+			</div>
+	
+			<div class="form-group b">
+				<label id="sett_eventdesc_label" for="sett_eventdesc">Event Description</label>
+				<textarea id="sett_eventdesc" type="text"></textarea>
+			</div>	
+
+		      <hr>
+
+		      <h2>Database Settings</h2>
+		      
+		      Eco Ops uses SCD Hub's free <a href="http://supabase.io" title="supabase database">Supabase</a> 
+		      level of service accounnt, You may wish to set up your own account and change these settings.  
+		      Eco Ops is designed as a decentralized network.
+		   
+		      
+	      	      </div>
+		      </form>  
+	      </div>      	      		      
+	      	      	      
+	      	    
+	      <div id=profile style="display:none;"><h1><img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_mafo2"> 
+		      <span id="prof_title">Profile</span>  <img src="/theme/mupy1/pleasepointing.svg" width=60 height=60 id="switch_to_moo"></h1>
+
+		      <form id="profile_update" onsubmit="updateprofile()">
+		<div class="grid">
+			<div class="form-group a">
+				<label id="prof_name_label" for="prof_name">Nom</label>
+				<input id="prof_name" type="text">
+			</div>
+	
+			<div class="form-group b">
+				<label id="prof_firstname_label" for="prof_firstname">Prénom</label>
+				<input id="prof_firstname" type="text">
+			</div>
+
+		<div class="form-group email-group">
+			<label id="prof_email_label" for="prof_email">Email</label>
+			<input id="prof_email" type="text">
+		</div>
+
+		<div class="form-group phone-group">
+			<label id="prof_phone_label" for="prof_phone">Téléphone (mobile)</label>
+			<input id="prof_phone" type="text">
+		</div>
+
+		<div class="textarea-group">
+			<label id="prof_bio_label" for="prof_bio">Bio</label>
+			<textarea id="prof_bio"></textarea>
+		</div>
+
+		<div class="form-group">
+			<label id="prof_address_label" for="prof_address">Adresse</label>
+			<input id="prof_address" type="text">
+		</div>
+
+		<div class="form-group">
+			<label id="prof_city_label" for="prof_city">Ville</label>
+			<input id="prof_city" type="text">
+		</div>
+
+		<div class="form-group">
+			<label id="prof_zip_label" for="prof_zip">Code postal</label>
+			<input id="prof_zip" type="text">
+		</div>
+	</div>
+
+	<div class="checkboxes" style="display:none;">
+
+		<div class="checkbox-group">
+			<label id="prof_newsletter_label" for="newsletter">Je souhaite recevoir la newsletter</label>
+			<input id="newsletter" type="checkbox">
+
+		</div>
+
+		<div class="checkbox-group">
+			<label id="prof_partnernews_label" for="newsletter-partners">Je souhaite recevoir la newsletter des partenaires</label>
+			<input id="newsletter-partners" type="checkbox">
+		</div>
+
+	</div>
+	
+	
+
+						<h1 class="title" id="prof_i_am_label">I am</h1>
+	<div class="checkboxes" id="checkboxes2">
+
+
+		<div class="checkbox-group" id="prof_cb1">
+			<label id="prof_shop_for_carboncredit_label" for="prof_shop_for_carboncredit">shopping for carbon credits</label>
+		</div>
+		<div class="checkbox-group" id="prof_cb2">
+			<label id="prof_sell_carboncredit_label" for="prof_sell_carboncredit">learning to sell carbon credits / biodiversity credits</label>
+		</div>		
+		
+	</div>	
+	<div class="checkboxes" id="checkboxes3">
+		
+		<div class="checkbox-group" id="prof_cb3">
+			<label id="prof_is_artist_label" for="prof_is_artist">an artist</label>
+		</div>
+		<div class="checkbox-group" id="prof_cb4">
+			<label id="prof_is_student_label" for="prof_is_student">enrolled student</label>
+		</div>
+		<div class="checkbox-group" id="prof_cb5">
+			<label id="prof_is_businessperson_label" for="prof_is_businessperson">a business</label>
+		</div>
+		<div class="checkbox-group" id="prof_cb6">
+			<label id="prof_is_orgrep_label" for="prof_is_orgrep">org representative</label>
+		</div>
+		
+	</div>
+		
+	<h1 class="title" id="prof_interests_label">Interests</h1>
+
+	<div class="checkboxes">	
+		
+		<div class="checkbox-group" id="prof_cb7">
+			<label id="prof_may_be_a_teacher_label" for="prof_may_be_a_teacher">teaching or future teacher</label>
+		</div>		
+		<div class="checkbox-group" id="prof_cb8">
+			<label id="prof_int_mentor_prog_label" for="prof_int_mentor_prog">mentor program</label>
+		</div>		
+
+		<div class="checkbox-group" id="prof_cb9">
+			<label id="prof_aspiring_broker_label" for="prof_aspiring_broker">materials brokering</label>
+		</div>
+	</div>
+	<div class="checkboxes">	
+
+		
+		<div class="checkbox-group" id="prof_cb10">
+			<label id="prof_regenerative_farming_label" for="prof_regenerative_farming">regenerative farming</label>
+		</div>
+		 			
+		<div class="checkbox-group" id="prof_cb11">
+			<label id="prof_is_footsoldier_label" for="prof_is_footsoldier">promoting a project</label>
+		</div>
+	
+		<div class="checkbox-group" id="prof_cb12">
+			<label id="prof_wish_ecoclub_label" for="prof_wish_ecoclub">eco club network</label>
+		</div>
+  
+	</div>
+	<div class="checkboxes">	
+		
+		<div class="checkbox-group" id="prof_cb13">
+			<label id="prof_wildlife_interface_label" for="prof_wildlife_interface">human-wildlife interface</label>
+		</div>
+		
+	</div>
+	
+	 
+			
+  			  
+
+
+
+	
+	
+	<div class="form-group">
+			
+  			  <input id="prof_submit_label" type="submit" class="mobutton" name="submit" value="Save your changes" style="background:#879af8;" onsubmit="updateprofile()">
+			  
+
+		
+	
+        </div>
+				
+				
+		</form>		
+			 <script>
+				  // load profile data into form
+				var user = localStorage.getItem("user");									
+				var pd = localStorage.getItem("profile_" + user);	
+				const profArr = pd.split(',');
+
+				 document.getElementById('prof_name').value=profArr[1];	
+				 document.getElementById('prof_firstname').value=profArr[2];	
+				 document.getElementById('prof_email').value=profArr[3];	
+				 document.getElementById('prof_phone').value=profArr[4];	
+				 document.getElementById('prof_bio').value=profArr[5];	
+				 document.getElementById('prof_address').value=profArr[6];	
+				 document.getElementById('prof_city').value=profArr[7];	
+				 document.getElementById('prof_zip').value=profArr[8];	
+ 				     
+
+           
+
+				var user = localStorage.getItem("user");									
+						var checkValues = localStorage.getItem("profile_" + user);	
+
+
+			       // var checkValues = "false,false,true";
+				const vals2 = checkValues.split(",");
+				const vals = vals2.slice(-13);
+
+				const colors = ["prof_shop_for_carboncredit","prof_sell_carboncredit","prof_is_artist",
+				"prof_is_student","prof_is_businessperson","prof_is_orgrep","prof_may_be_a_teacher","prof_int_mentor_prog",
+				"prof_aspiring_broker","prof_regenerative_farming","prof_is_footsoldier","prof_wish_ecoclub",
+				"prof_wildlife_interface"];
+
+				let loopnum = 0;
+				colors.forEach((color)=>{
+
+				    //  generate id
+				    const id = `${color}`;
+
+				    // create a checkbox
+				    const checkbox1 = document.createElement('input');
+				    checkbox1.type = "checkbox";
+				    checkbox1.name = "color";
+				    checkbox1.value = color;
+				    checkbox1.checked = true;
+				    var val = (vals[loopnum] === "true");
+
+				    checkbox1.checked = val;
+				    checkbox1.id = id;
+
+				    // place the checkbox inside a label
+				    loopnum++;
+
+				    // add the label to the root
+				    const idnum = "prof_cb"+loopnum;
+				    var color2 = color+"_label";	
+
+					var checkboxCont = document.getElementById(idnum);
+					var checkboxCont2 = document.getElementById(color2);					
+  				 	// ref: https://jsfiddle.net/mdehghani/4fog9emv/
+					checkboxCont.insertBefore(checkbox1,checkboxCont2);					
+				});
+			    </script>
+				 
+	      </div>	      	    	    
+      </ion-content>
+    </ion-page>
+  </ion-app>
+
+  <ion-menu-controller></ion-menu-controller>
+
+
+	
+	
+</body>
+<script type="module" src="/src/main.js"></script>
+<script type="module" src="/src/Map.js"></script> 
+
+<script>
+			/*
+	Eco Ops  ..  Welcome popup :) 
+			*/
+	window.addEventListener('load', function(event) {
+    
+		document.getElementById("welcomepopupContainer").style.display = "block";						
+		document.getElementById("welcomepopupContainer").style.width = "100%";						
+		document.getElementById("welcomepopupContainer").style.height = "100%";						
+
+	}); 
+			/*
+	Eco Ops  .. Routing system :)  https://ecoops.vercel.app/?page=orodha
+		        */
+						
+					try {
+						var url_string = (window.location.href).toLowerCase();
+						var url = new URL(url_string);
+						var page = url.searchParams.get("page");
+							console.log(page);
+						if (page === "tests") {
+							        document.getElementById("greeting").style.display = "none";						
+							        document.getElementById("chaimocha").style.display = "block";						
+						                console.log(page);
+						} 
+						if (page === "orodha") {
+							        document.getElementById("greeting").style.display = "none";						
+							        document.getElementById("orodha").style.display = "block";						
+						                console.log(page);
+						} 
+						if (page === "compost") {
+							        document.getElementById("greeting").style.display = "none";						
+							        document.getElementById("compost").style.display = "block";						
+						                console.log(page);
+								document.getElementById("menu_header").style.background="url(/icons/compost-and-nursery_header.png)";
+						}
+					} catch (err) {
+						console.log("Issues with Parsing URL Parameter's - " + err);
+					}
+		
+
+	
+	
+var userhash = localStorage.getItem("userhash");
+		
+		
+// menu language translation layers	
+	
+function sheng(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- Ma Xchange";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- Stingozandifu";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Kumaintain / kukacheza";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="Gas Tangi";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="Gas Cooker";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="Dizo";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="Mold ya Presha";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="Boiler Pusha";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="Ma Foot Soliders";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="Ma Broker";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="Arega / Kusaga";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Kwachk";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="Kusafisha";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="Selecta";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="Orodha ya ma orodha";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";		
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="Ma leaf";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="Mbinu";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="Jinsi Ya Kushiriki";
+ document.getElementById("page_title_header").innerHTML="Usawa Mazingawasa";	
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #efefef";	
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="Pakua data na maripoti yako";
+
+ document.getElementById("prof_name_label").innerHTML="Jina";	
+ document.getElementById("prof_firstname_label").innerHTML="Jina la kwanza";	
+ document.getElementById("prof_email_label").innerHTML="Barua pepe";	
+ document.getElementById("prof_phone_label").innerHTML="Simu";	
+ document.getElementById("prof_bio_label").innerHTML="Wasifu";	
+ document.getElementById("prof_address_label").innerHTML="Nyongeza";	
+ document.getElementById("prof_city_label").innerHTML="Mji";	
+ document.getElementById("prof_zip_label").innerHTML="Msimbo";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Nia ya kununua Mikopo ya Kaboni";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Kujifunza kuuza mikopo ya kaboni / mikopo ya viumbe hai";
+ document.getElementById("prof_is_artist_label").innerHTML="Mimi ni msanii";
+ document.getElementById("prof_is_student_label").innerHTML="mwanafunzi aliyeandikishwa";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Mfanyabiashara";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="Mwalimu";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="Programu ya mshauri";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="Udalali wa vifaa";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="Mkulima";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="Promota";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="klabu ya eco";	
+ document.getElementById("prof_i_am_label").innerHTML="Mimi ni";	
+ document.getElementById("prof_interests_label").innerHTML="Maslahi";	
+ document.getElementById("prof_submit_label").value="hifadhi wasifu";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Kiolesura cha binadamu na wanyamapori";
+ document.getElementById("prof_is_orgrep_label").innerHTML="mwakilishi wa shirika";
+			 
+}
+function eng(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- Transfer";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- Engineering";	
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Maintenance";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="Compressed Gas";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="Stove Fuel";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="Diesel";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="Pressure Molding";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="Extruding";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="Marketing";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="Brokering";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="Chipping";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Transport";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="Cleaning";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="Sort approval";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="Checkin product"
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="Logistics Map";	
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="Method";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="How To Participate";
+ document.getElementById("page_title_header").innerHTML="Environmental Equality";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #fdb120";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="Your data & reports";
+
+ document.getElementById("prof_name_label").innerHTML="Name";	
+ document.getElementById("prof_firstname_label").innerHTML="First Name";	
+ document.getElementById("prof_email_label").innerHTML="Email";	
+ document.getElementById("prof_phone_label").innerHTML="Phone";	
+ document.getElementById("prof_bio_label").innerHTML="Bio";	
+ document.getElementById("prof_address_label").innerHTML="Address";	
+ document.getElementById("prof_city_label").innerHTML="City";	
+ document.getElementById("prof_zip_label").innerHTML="Postal Code";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Shopping for Carbon Credits";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Learning to sell carbon credits / biodiversity credits";
+ document.getElementById("prof_is_artist_label").innerHTML="an artist";
+ document.getElementById("prof_is_student_label").innerHTML="a student";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Representing a business";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="teaching or future teacher";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="mentor program";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="materials brokering";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="regenerative farming";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="promoting a project";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="eco club network";	
+ document.getElementById("prof_i_am_label").innerHTML="I am";	
+ document.getElementById("prof_interests_label").innerHTML="Interests";	
+ document.getElementById("prof_submit_label").value="Save these changes";
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Human-wildlife interface";	
+ document.getElementById("prof_is_orgrep_label").innerHTML="organization representative";
+	
+	
+}
+function spanish(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- Transferir";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- Ingeniería";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Mantenimiento";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="Gas comprimido";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="Combustible de estufa";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="Diesel";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="Moldeo a presión";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="extrusión";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="promociones";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="corretaje";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="astillarse";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Transporte";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="Limpieza";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="Ordenar aprobación";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";			
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="Producto registrado";
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="Mapa";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="Método";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="Como participar";
+ document.getElementById("page_title_header").innerHTML="Igualdad Ambiental";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #9ec3c6";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="Descarga tus datos e informes";
+
+ document.getElementById("prof_name_label").innerHTML="Nombre";	
+ document.getElementById("prof_firstname_label").innerHTML="Primara nombre";	
+ document.getElementById("prof_email_label").innerHTML="Email";	
+ document.getElementById("prof_phone_label").innerHTML="Teléfono";	
+ document.getElementById("prof_bio_label").innerHTML="Biografía";	
+ document.getElementById("prof_address_label").innerHTML="Dirección";	
+ document.getElementById("prof_city_label").innerHTML="Ciudad";	
+ document.getElementById("prof_zip_label").innerHTML="Código postal";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Compra de créditos de carbono";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Aprendiendo a vender créditos de carbono/créditos de biodiversidad";
+ document.getElementById("prof_is_artist_label").innerHTML="artista";
+ document.getElementById("prof_is_student_label").innerHTML="alumna";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Representando un negocio";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="Docente o futura profesora";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="programa de mentores";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="corretaje de materiales";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="agricultura regenerativa";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="promoviendo un proyecto";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="red de clubes ecológicos";	
+ document.getElementById("prof_i_am_label").innerHTML="Soy";	
+ document.getElementById("prof_interests_label").innerHTML="Intereses";	
+ document.getElementById("prof_submit_label").value="Guardar estos cambios";
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Interfaz humano-vida silvestre";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="representante de la organización";
+		
+}	
+function hawaiian(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- hoʻoili";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- ʻenekinia";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Mālamalama";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="kinoea paʻa";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="wahie kapuahi";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="Diesel";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="kaomi kaomi";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="extrusion";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="nā hoʻolaha";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="kūʻai kūʻai";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="mamala";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Lawelawe";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="Hoomaemae";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="ʻae kauoha";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Aie kalapona";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Pilikino";			
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="huahana i hoʻopaʻa ʻia";
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="Palapala ʻāina";
+ document.getElementById("page_title_header").innerHTML="Kaulike Kaiapuni";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="ʻano hana";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="Pehea e komo ai";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #9ec3c6";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="aie kalapona";	
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="Hoʻoiho i kāu ʻikepili a me kāu hōʻike";
+
+ document.getElementById("prof_name_label").innerHTML="Inoa";	
+ document.getElementById("prof_firstname_label").innerHTML="Inoa mua";	
+ document.getElementById("prof_email_label").innerHTML="leka uila";	
+ document.getElementById("prof_phone_label").innerHTML="Kelepona";	
+ document.getElementById("prof_bio_label").innerHTML="Bio";	
+ document.getElementById("prof_address_label").innerHTML="Heluhelu";	
+ document.getElementById("prof_city_label").innerHTML="Kulanakauhale";	
+ document.getElementById("prof_zip_label").innerHTML="Helu wahi";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Kūʻai no nā aie kalapona";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="kūʻai aku i nā hōʻaiʻē kalapona / ʻaiʻē biodiversity";
+ document.getElementById("prof_is_artist_label").innerHTML="he mea pena kii";
+ document.getElementById("prof_is_student_label").innerHTML="he haumana";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="E hōʻike ana i kahi ʻoihana";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="aʻo a i ʻole kumu e hiki mai ana";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="papahana alakaʻi";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="mea kūʻai kālā";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="mahiʻai hou";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="e paipai ana i kekahi papahana";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="ʻoihana hui kaiaola";	
+ document.getElementById("prof_i_am_label").innerHTML="ʻo wau";	
+ document.getElementById("prof_interests_label").innerHTML="Nā mea hoihoi";	
+ document.getElementById("prof_submit_label").value="E mālama i kēia mau hoʻololi";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Pilikia kanaka-holoholona";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="ʻelele hui";
+		
+}
+	
+function amharic(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- ማስተላለፍ";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- ምህንድስና";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- ጥገና";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="የታመቀ ጋዝ";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="የምድጃ ነዳጅ";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="ናፍጣ";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="የግፊት መቅረጽ";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="ማስወጣት";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="ግብይት";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="ደላላ";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="መቆራረጥ";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="መጓጓዣ";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="ማጽዳት";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="ማጽደቅን መደርደር";	
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="ምርቱን ያረጋግጡ";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";		
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="ካርታ";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="ዘዴ";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="መሳተፍ";
+ document.getElementById("page_title_header").innerHTML="የአካባቢ እኩልነት";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #2ac8c3";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="የእርስዎ ውሂብ እና ሪፖርቶች";
+
+ document.getElementById("prof_name_label").innerHTML="ያም";	
+ document.getElementById("prof_firstname_label").innerHTML="የመጀመሪያ ስም";	
+ document.getElementById("prof_email_label").innerHTML="ኢ-ሜይል";	
+ document.getElementById("prof_phone_label").innerHTML="ስልክ";	
+ document.getElementById("prof_bio_label").innerHTML="የህይወት ታሪክ";	
+ document.getElementById("prof_address_label").innerHTML="አድራሻ";	
+ document.getElementById("prof_city_label").innerHTML="ከተማ";	
+ document.getElementById("prof_zip_label").innerHTML="የፖስታ መላኪያ ኮድ";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="የካርቦን ክሬዲት ግዢ";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="የካርቦን ክሬዲት/ብዝሃ ሕይወት ክሬዲቶችን መሸጥ";
+ document.getElementById("prof_is_artist_label").innerHTML="አርቲስት";
+ document.getElementById("prof_is_student_label").innerHTML="ተማሪ";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="ንግድን በመወከል";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="መምህር";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="አማካሪ ፕሮግራም";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="ቁሶች ደላላ";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="እንደገና የሚያድግ ግብርና";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="ፕሮጀክት ማስተዋወቅ";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="የአካባቢ ክበብ";	
+ document.getElementById("prof_i_am_label").innerHTML="አኩሪ አተር";	
+ document.getElementById("prof_interests_label").innerHTML="ፍላጎቶች";	
+ document.getElementById("prof_submit_label").value="እነዚህን ለውጦች ያስቀምጡ";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Pilikia kanaka-holoholona";			
+ document.getElementById("prof_is_orgrep_label").innerHTML="ድርጅት ተወካይ";
+
+}	
+function arabic(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- نقل";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- هندسة";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML="اعمال صيانة -- ";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="غاز مضغوط";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="وقود الموقد";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="ديزل";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="صب الضغط";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="البثق";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="تسويق";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="السمسرة";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="التقطيع";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="المواصلات";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="تنظيف";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML=document.getElementById("sele_title").innerHTML="نوع الموافقة";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML=document.getElementById("orod_title").innerHTML="منتج تسجيل الوصول";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML=document.getElementById("prof_title").innerHTML="Profile";			
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML=document.getElementById("greeting_content").innerHTML="خريطة";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="طُرق";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="كيفية المشاركة";
+ document.getElementById("page_title_header").innerHTML="المساواة البيئية";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #b471b2";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="بياناتك وتقاريرك";
+
+ document.getElementById("prof_name_label").innerHTML="بطاطا";	
+ document.getElementById("prof_firstname_label").innerHTML="الاسم الاول";	
+ document.getElementById("prof_email_label").innerHTML="البريد الإلكتروني";	
+ document.getElementById("prof_phone_label").innerHTML="هاتف";	
+ document.getElementById("prof_bio_label").innerHTML="السيرة الذاتية";	
+ document.getElementById("prof_address_label").innerHTML="تبوك";	
+ document.getElementById("prof_city_label").innerHTML="مدينة";	
+ document.getElementById("prof_zip_label").innerHTML="رمز بريدي";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="شراء اعتمادات الكربون";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="بيع أرصدة الكربون";
+ document.getElementById("prof_is_artist_label").innerHTML="فنان";
+ document.getElementById("prof_is_student_label").innerHTML="طالب";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="تمثيل عمل";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="التدريس أو مدرس المستقبل";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="برنامج المرشد";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="السمسرة المادية";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="الزراعة المتجددة";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="الترويج لمشروع";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="شبكة النادي البيئي";	
+ document.getElementById("prof_i_am_label").innerHTML="يو فول الصويا";	
+ document.getElementById("prof_interests_label").innerHTML="الإهتمامات";	
+ document.getElementById("prof_submit_label").value="احفظ هذه التغييرات";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="واجهة الإنسان والحياة البرية";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="ممثل المنظمة";
+		
+}	
+
+function french(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- transférer";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- Ingénierie";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Entretien";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="gaz compressé";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="poêle à bois";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="Diesel";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="moulage sous pression";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="extrusion";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="promotions";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="courtage";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="éclat";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Le transport";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="Nettoyage";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="approbation de la commande";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Crédit carbone";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profil";			
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="produit enregistré";
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="Carte";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="méthodes";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="comment participer";
+ document.getElementById("page_title_header").innerHTML="Égalité environnementale";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #9ec3c6";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="vos données et rapports";
+ 
+ document.getElementById("prof_name_label").innerHTML="patate douce";	
+ document.getElementById("prof_firstname_label").innerHTML="Prénom";	
+ document.getElementById("prof_email_label").innerHTML="E-mail";	
+ document.getElementById("prof_phone_label").innerHTML="Téléphoner";	
+ document.getElementById("prof_bio_label").innerHTML="Biographie";	
+ document.getElementById("prof_address_label").innerHTML="Adresse";	
+ document.getElementById("prof_city_label").innerHTML="Ville";	
+ document.getElementById("prof_zip_label").innerHTML="code postal";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Acheter des crédits carbone";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Apprendre à vendre des crédits carbone / crédits biodiversité";
+ document.getElementById("prof_is_artist_label").innerHTML="artiste";
+ document.getElementById("prof_is_student_label").innerHTML="un étudiant";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Représenter une entreprise";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="enseignant ou futur enseignant";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="programme de mentorat";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="courtage de matériel";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="agriculture régénérative";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="promouvoir un projet";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="réseau d'écoclubs";	
+ document.getElementById("prof_i_am_label").innerHTML="je suis";	
+ document.getElementById("prof_interests_label").innerHTML="intérêts";	
+ document.getElementById("prof_submit_label").value="Enregistrez ces modifications";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Interface homme-faune";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="représentant de l'organisation";
+		
+}	
+		
+function russian(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- Передача";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("maxc_title").innerHTML=" -- инженерия";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("maxc_title").innerHTML=" -- техобслуживание";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="сжатый газ";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="печное топливо";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="дизель";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="литье под давлением";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="экструзия";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="маркетинг";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="посредничество";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="измельчение";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Транспорт";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="уборка";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="тип согласия";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="Продукт регистрации";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";			
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="карта";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="методы";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="как принять участие";
+ document.getElementById("page_title_header").innerHTML="Экологическое равенство";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #9a5f34";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="ваши данные и отчеты";
+
+ document.getElementById("prof_name_label").innerHTML="сладкий картофель";	
+ document.getElementById("prof_firstname_label").innerHTML="Имя";	
+ document.getElementById("prof_email_label").innerHTML="Эл. почта";	
+ document.getElementById("prof_phone_label").innerHTML="Телефон";	
+ document.getElementById("prof_bio_label").innerHTML="биография";	
+ document.getElementById("prof_address_label").innerHTML="Адрес";	
+ document.getElementById("prof_city_label").innerHTML="Город";	
+ document.getElementById("prof_zip_label").innerHTML="Почтовый Код";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Покупка углеродных кредитов";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Учимся продавать углеродные кредиты / кредиты биоразнообразия";
+ document.getElementById("prof_is_artist_label").innerHTML="Исполнитель";
+ document.getElementById("prof_is_student_label").innerHTML="студент";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Представление бизнеса";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="преподаватель или будущий учитель";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="программа наставника";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="посредничество в материалах";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="регенеративное земледелие";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="продвижение проекта";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="сеть эко клубов";	
+ document.getElementById("prof_i_am_label").innerHTML="Йо соя";	
+ document.getElementById("prof_interests_label").innerHTML="интересы";	
+ document.getElementById("prof_submit_label").value="Сохраните эти изменения";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Интерфейс человека и дикой природы";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="представитель организации";
+		
+}	
+	
+function japanese(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- 移行";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- エンジニアリング";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- メンテナンス";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="圧縮ガス";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="灯油";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="ディーゼル";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="射出成形";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="押し出す";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="マーケティング";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="調停";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="研削";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="交通手段";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="クリーニング";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="同意タイプ";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="登録商品";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="カーボンクレジット";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="プロフィール";			
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="地図";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="メソッド";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="参加方法";	
+ document.getElementById("page_title_header").innerHTML="環境の公平性";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #9a5f34";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="あなたのデータとレポート";
+	
+
+ document.getElementById("prof_name_label").innerHTML="ヤムイモ";	
+ document.getElementById("prof_firstname_label").innerHTML="ファーストネーム";	
+ document.getElementById("prof_email_label").innerHTML="Eメール";	
+ document.getElementById("prof_phone_label").innerHTML="電話";	
+ document.getElementById("prof_bio_label").innerHTML="バイオ";	
+ document.getElementById("prof_address_label").innerHTML="住所";	
+ document.getElementById("prof_city_label").innerHTML="街";	
+ document.getElementById("prof_zip_label").innerHTML="郵便番号";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="炭素クレジットの購入";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="炭素クレジット/生物多様性クレジットの売り方を学ぶ";
+ document.getElementById("prof_is_artist_label").innerHTML="ある芸術家";
+ document.getElementById("prof_is_student_label").innerHTML="学生";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="ビジネスを代表する";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="教育または将来の教師";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="メンタープログラム";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="材料仲介";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="再生農業";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="プロジェクトの推進";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="エコクラブネットワーク";	
+ document.getElementById("prof_i_am_label").innerHTML="ヨーソイ";	
+ document.getElementById("prof_interests_label").innerHTML="興味";	
+ document.getElementById("prof_submit_label").value="変更内容を保存";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="人間と野生生物のインターフェース";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="組織代表者";
+	
+}	
+function finish(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- Siirtoon";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- suunnittelu";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Korjaus";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="paineistettu kaasu";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="puuhella";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="diesel";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="moulage sous pression";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="extrusion";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="commercialisation";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="courtage";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="déchiquetage";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="Kuljetus";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="puhdistus";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="suostumuksen tyyppi";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML=document.getElementById("carb_title").innerHTML="hiilidioksidihyvitys";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML=document.getElementById("prof_title").innerHTML="Profiili";			
+ document.getElementById("0orodha").innerHTML="Rekisteröinti tuote";
+ document.getElementById("0maleaf").innerHTML="kartta";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="menetelmiä";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="miten osallistua";	
+ document.getElementById("page_title_header").innerHTML="Égalité environnementale";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #e5f0a4";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="tietosi ja raportit";
+	
+	
+ document.getElementById("prof_name_label").innerHTML="Nimi";	
+ document.getElementById("prof_firstname_label").innerHTML="Etunimi";	
+ document.getElementById("prof_email_label").innerHTML="Sähköposti";	
+ document.getElementById("prof_phone_label").innerHTML="Puhelin";	
+ document.getElementById("prof_bio_label").innerHTML="Elämäkerta";	
+ document.getElementById("prof_address_label").innerHTML="Osoite";	
+ document.getElementById("prof_city_label").innerHTML="Kaupunki";	
+ document.getElementById("prof_zip_label").innerHTML="postinumero";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Hiilihyvitysten ostaminen";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Hiilihyvitysten / biologisen monimuotoisuuden hyvitysten myynti";
+ document.getElementById("prof_is_artist_label").innerHTML="taiteilija";
+ document.getElementById("prof_is_student_label").innerHTML="opiskelija";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Yrityksen edustaminen";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="opettaja tai tuleva opettaja";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="mentoriohjelma";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="materiaalien välitys";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="uudistava viljely";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="projektin edistäminen";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="ekoklubiverkosto";	
+ document.getElementById("prof_i_am_label").innerHTML="olen";	
+ document.getElementById("prof_interests_label").innerHTML="Kiinnostuksen kohteet";	
+ document.getElementById("prof_submit_label").value="Tallenna nämä muutokset";		
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Ihmisen ja luonnon rajapinta";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="organisaation edustaja";
+		
+}	
+function chinese(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- 转移";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- 工程";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- 维修工作";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="压缩气体";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="炉灶燃料";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="柴油机";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="压铸";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="挤压";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="营销";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="经纪";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="切碎";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="运输";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="打扫";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="同意类型";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";			
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="签到产品";
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="一张地图";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="方法";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="如何參與";	
+ document.getElementById("page_title_header").innerHTML="环境平等";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #ff9200";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="您的數據和報告";
+
+ document.getElementById("prof_name_label").innerHTML="姓名";	
+ document.getElementById("prof_firstname_label").innerHTML="名";	
+ document.getElementById("prof_email_label").innerHTML="電子郵件";	
+ document.getElementById("prof_phone_label").innerHTML="電話";	
+ document.getElementById("prof_bio_label").innerHTML="生物";	
+ document.getElementById("prof_address_label").innerHTML="地址";	
+ document.getElementById("prof_city_label").innerHTML="城市";	
+ document.getElementById("prof_zip_label").innerHTML="郵政編碼";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="購買碳信用額";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="出售碳信用/生物多樣性信用";
+ document.getElementById("prof_is_artist_label").innerHTML="一個藝術家";
+ document.getElementById("prof_is_student_label").innerHTML="一個學生";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="代表企業";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="教學或未來的老師";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="導師計劃";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="材料經紀";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="再生農業";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="推廣一個項目";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="生態俱樂部網絡";	
+ document.getElementById("prof_i_am_label").innerHTML="我是";	
+ document.getElementById("prof_interests_label").innerHTML="興趣";	
+ document.getElementById("prof_submit_label").value="保存這些更改";		
+ document.getElementById("prof_wildlife_interface_label").innerHTML="人與野生動物的界面";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="組織代表";
+
+}
+function turkish(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- Aktar";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- proje";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- Bakım çalışmaları";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="sıkıştırılmış gaz";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="soba yakıtı";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="dizel yakıt";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="döküm";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="ekstrüzyon";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="Pazarlama";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="aracılık";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="doğranmış";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="toplu taşıma";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="temiz";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="Rıza Türü";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";		
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="üründe oturum aç";
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="一harita";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="yöntemler";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="Nasıl katılacağım";	
+ document.getElementById("page_title_header").innerHTML="çevresel eşitlik";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #0019ff";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="verileriniz ve raporlarınız";
+
+ document.getElementById("prof_name_label").innerHTML="tatlı patates";	
+ document.getElementById("prof_firstname_label").innerHTML="ilk adı";	
+ document.getElementById("prof_email_label").innerHTML="e-posta";	
+ document.getElementById("prof_phone_label").innerHTML="Telefon";	
+ document.getElementById("prof_bio_label").innerHTML="biyografi";	
+ document.getElementById("prof_address_label").innerHTML="Adres";	
+ document.getElementById("prof_city_label").innerHTML="Şehir";	
+ document.getElementById("prof_zip_label").innerHTML="Posta Kodu";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Karbon Kredisi Satın Alma";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Karbon kredisi / biyolojik çeşitlilik kredisi satmayı öğrenmek";
+ document.getElementById("prof_is_artist_label").innerHTML="bir sanatçı";
+ document.getElementById("prof_is_student_label").innerHTML="bir öğrenci";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Bir işletmeyi temsil etmek";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="öğretmenlik veya geleceğin öğretmeni";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="mentor programı";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="malzeme komisyoncusu";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="rejeneratif tarım";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="bir projeyi teşvik etmek";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="eko kulüp ağı";	
+ document.getElementById("prof_i_am_label").innerHTML="ben";	
+ document.getElementById("prof_interests_label").innerHTML="ilgi alanları";	
+ document.getElementById("prof_submit_label").value="Bu değişiklikleri kaydet";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="İnsan-yaban hayatı arayüzü";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="organizasyon temsilcisi";
+
+}	
+function portuguese(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- transferir";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- projeto";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- serviço de manutenção";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="gás comprimido";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="combustível de fogão";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="Motor a gasóleo";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="fundição";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="extrusão";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="Marketing";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="Corretagem";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="picado";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="transporte";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="limpar";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="Tipo de consentimento";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="produto de login";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";		
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="um mapa";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="métodos";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="como participar";	
+ document.getElementById("page_title_header").innerHTML="igualdade ambiental";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #8cc18f";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="seus dados e relatórios";
+
+ document.getElementById("prof_name_label").innerHTML="Inhame";	
+ document.getElementById("prof_firstname_label").innerHTML="Primeiro nome";	
+ document.getElementById("prof_email_label").innerHTML="E-mail";	
+ document.getElementById("prof_phone_label").innerHTML="Telefone";	
+ document.getElementById("prof_bio_label").innerHTML="biografia";	
+ document.getElementById("prof_address_label").innerHTML="Endereço";	
+ document.getElementById("prof_city_label").innerHTML="Cidade";	
+ document.getElementById("prof_zip_label").innerHTML="Código postal";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Compras de Créditos de Carbono";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Desejo de vender créditos de carbono/créditos de biodiversidade";
+ document.getElementById("prof_is_artist_label").innerHTML="um artista";
+ document.getElementById("prof_is_student_label").innerHTML="um estudante";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Representando um negócio";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="professor ou futuro professor";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="programa de mentores";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="intermediação de materiais";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="agricultura regenerativa";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="promovendo um projeto";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="rede clube eco";	
+ document.getElementById("prof_i_am_label").innerHTML="eu sou";	
+ document.getElementById("prof_interests_label").innerHTML="interesses";	
+ document.getElementById("prof_submit_label").value="Salve essas alterações";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Interface homem-vida selvagem";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="representante da organização";
+	
+}	
+
+	
+function hindi(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- स्थानांतरण करना";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- परियोजना";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- रखरखाव का काम";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="संपीडित गैस";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="स्टोव ईंधन";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="डीजल इंजन";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="मेटल सांचों में ढालना";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="बाहर निकालना";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="विपणन";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="दलाली";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="काटा हुआ";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="परिवहन";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="स्वच्छ";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="सहमति का प्रकार";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="उत्पाद में साइन इन करें";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";			
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="一नक्शा";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="तरीकों";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="कैसे भाग लें";	
+ document.getElementById("page_title_header").innerHTML="पर्यावरण समानता";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #fb8ffa";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="आपका डेटा और रिपोर्ट";
+
+ document.getElementById("prof_name_label").innerHTML="रतालू";	
+ document.getElementById("prof_firstname_label").innerHTML="पहला नाम";	
+ document.getElementById("prof_email_label").innerHTML="ईमेल";	
+ document.getElementById("prof_phone_label").innerHTML="फ़ोन";	
+ document.getElementById("prof_bio_label").innerHTML="जीवनी";	
+ document.getElementById("prof_address_label").innerHTML="पता";	
+ document.getElementById("prof_city_label").innerHTML="शहर";	
+ document.getElementById("prof_zip_label").innerHTML="डाक कोड";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="कार्बन क्रेडिट के लिए खरीदारी";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="कार्बन क्रेडिट / जैव विविधता क्रेडिट बेचना";
+ document.getElementById("prof_is_artist_label").innerHTML="एक कलाकार";
+ document.getElementById("prof_is_student_label").innerHTML="एक विद्यार्थी";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="एक व्यवसाय का प्रतिनिधित्व";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="शिक्षण या भविष्य शिक्षक";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="संरक्षक कार्यक्रम";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="सामग्री दलाली";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="पुनर्योजी खेती";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="एक परियोजना का प्रचार";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="इको क्लब नेटवर्क";	
+ document.getElementById("prof_i_am_label").innerHTML="यो सोया";	
+ document.getElementById("prof_interests_label").innerHTML="रूचियाँ";	
+ document.getElementById("prof_submit_label").value="इन परिवर्तनों को सहेजें";		
+ document.getElementById("prof_wildlife_interface_label").innerHTML="मानव-वन्यजीव इंटरफ़ेस";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="संगठन प्रतिनिधि";
+		
+}	
+	
+	
+function bengali(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- স্থানান্তর";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- প্রকল্প";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- রক্ষণাবেক্ষণ কাজ";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="সঙ্কুচিত গ্যাস";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="চুলা জ্বালানী";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="ডিজেল ইঞ্জিন";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="মরা ঢালাই";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="এক্সট্রুশন";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="মার্কেটিং";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="দালালি";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="কাটা";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="পরিবহন";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="পরিষ্কার";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="সম্মতির প্রকার";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="পণ্য সাইন ইন করুন";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";		
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="一মানচিত্র";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="পদ্ধতি";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="কিভাবে অংশগ্রহণ করতে হয়";	
+ document.getElementById("page_title_header").innerHTML="পরিবেশগত সমতা";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #9db3eb";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="আপনার ডেটা এবং রিপোর্ট";
+
+ document.getElementById("prof_name_label").innerHTML="ইয়াম";	
+ document.getElementById("prof_firstname_label").innerHTML="নামের প্রথম অংশ";	
+ document.getElementById("prof_email_label").innerHTML="ই-মেইল";	
+ document.getElementById("prof_phone_label").innerHTML="ফোন";	
+ document.getElementById("prof_bio_label").innerHTML="জীবনী";	
+ document.getElementById("prof_address_label").innerHTML="ঠিকানা";	
+ document.getElementById("prof_city_label").innerHTML="শহর";	
+ document.getElementById("prof_zip_label").innerHTML="পোস্ট অফিসের নাম্বার";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="কার্বন ক্রেডিট জন্য কেনাকাটা";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="কার্বন ক্রেডিট / জীববৈচিত্র্য ক্রেডিট বিক্রি করুন";
+ document.getElementById("prof_is_artist_label").innerHTML="শিল্পী";
+ document.getElementById("prof_is_student_label").innerHTML="ছাত্রদের";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="একটি ব্যবসা প্রতিনিধিত্ব";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="শিক্ষকতা বা ভবিষ্যতের শিক্ষক";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="পরামর্শদাতা প্রোগ্রাম";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="উপাদান দালালি";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="পুনর্জন্মমূলক চাষ";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="একটি প্রকল্প প্রচার";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="ইকো ক্লাব নেটওয়ার্ক";	
+ document.getElementById("prof_i_am_label").innerHTML="ইয়ো সয়া";	
+ document.getElementById("prof_interests_label").innerHTML="স্বার্থ";	
+ document.getElementById("prof_submit_label").value="পরিবর্তনগুলোর সংরক্ষন";	
+ document.getElementById("prof_wildlife_interface_label").innerHTML="মানব-বন্যপ্রাণী ইন্টারফেস";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="সংস্থার প্রতিনিধি";
+
+}	
+
+	
+function indomalay(){
+ document.getElementById("0maxchange").innerHTML=document.getElementById("maxc_title").innerHTML=" -- pemindahan";
+ document.getElementById("0stingozandifu").innerHTML=document.getElementById("stin_title").innerHTML=" -- projek";
+ document.getElementById("0kumaintain").innerHTML=document.getElementById("kuma_title").innerHTML=" -- kerja penyelenggaraan";
+ document.getElementById("0gastangi").innerHTML=document.getElementById("gast_title").innerHTML="gas mampat";
+ document.getElementById("0gascooker").innerHTML=document.getElementById("gasc_title").innerHTML="bahan api dapur";
+ document.getElementById("0dizo").innerHTML=document.getElementById("dizo_title").innerHTML="enjin diesel";
+ document.getElementById("0presha").innerHTML=document.getElementById("pres_title").innerHTML="pengecoran mati";
+ document.getElementById("0pusha").innerHTML=document.getElementById("pusha_title").innerHTML="ekstrusi";
+ document.getElementById("0footsoldiers").innerHTML=document.getElementById("mafo_title").innerHTML="Pemasaran";
+ document.getElementById("0mabroker").innerHTML=document.getElementById("mabr_title").innerHTML="Pialang";
+ document.getElementById("0arega").innerHTML=document.getElementById("areg_title").innerHTML="dicincang";
+ document.getElementById("0kwachk").innerHTML=document.getElementById("kwac_title").innerHTML="angkutan";
+ document.getElementById("0kusafisha").innerHTML=document.getElementById("kusa_title").innerHTML="membersihkan";
+ document.getElementById("0selecta").innerHTML=document.getElementById("sele_title").innerHTML="Jenis persetujuan";
+ document.getElementById("0orodha").innerHTML=document.getElementById("orod_title").innerHTML="produk masuk";
+ document.getElementById("0nfthub").innerHTML=document.getElementById("nfth_title").innerHTML="NFT";
+ document.getElementById("0carboncredit").innerHTML=document.getElementById("carb_title").innerHTML="Carbon Credit";
+ document.getElementById("0profile").innerHTML=document.getElementById("prof_title").innerHTML="Profile";			
+ document.getElementById("0maleaf").innerHTML=document.getElementById("greeting_content").innerHTML="sebuah peta";
+ document.getElementById("0mbinu").innerHTML=document.getElementById("mbinu_title").innerHTML="kaedah";
+ document.getElementById("0jinsiya").innerHTML=document.getElementById("jins_title").innerHTML="cara berpartisipasi";	
+ document.getElementById("page_title_header").innerHTML="kesetaraan lingkungan";
+ document.getElementById("menu_header").style.background="url(/ecoops_transp_header.png) #85b153";
+ document.getElementById("0pakuayako").innerHTML=document.getElementById("pakuayako_title").innerHTML="data dan laporan anda";
+
+ document.getElementById("prof_name_label").innerHTML="ubi";	
+ document.getElementById("prof_firstname_label").innerHTML="Nama pertama";	
+ document.getElementById("prof_email_label").innerHTML="E-mel";	
+ document.getElementById("prof_phone_label").innerHTML="telefon";	
+ document.getElementById("prof_bio_label").innerHTML="bio";	
+ document.getElementById("prof_address_label").innerHTML="Alamat";	
+ document.getElementById("prof_city_label").innerHTML="Bandar";	
+ document.getElementById("prof_zip_label").innerHTML="Poskod";	
+ document.getElementById("prof_shop_for_carboncredit_label").innerHTML="Membeli-belah untuk Kredit Karbon";
+ document.getElementById("prof_sell_carboncredit_label").innerHTML="Belajar menjual kredit karbon / kredit biodiversiti";
+ document.getElementById("prof_is_artist_label").innerHTML="artis";
+ document.getElementById("prof_is_student_label").innerHTML="pelajar";	
+ document.getElementById("prof_is_businessperson_label").innerHTML="Mewakili perniagaan";	
+ document.getElementById("prof_may_be_a_teacher_label").innerHTML="mengajar atau bakal guru";	
+ document.getElementById("prof_int_mentor_prog_label").innerHTML="program mentor";	
+ document.getElementById("prof_aspiring_broker_label").innerHTML="pembrokeran bahan";	
+ document.getElementById("prof_regenerative_farming_label").innerHTML="pertanian regeneratif";	
+ document.getElementById("prof_is_footsoldier_label").innerHTML="mempromosikan projek";
+ document.getElementById("prof_wish_ecoclub_label").innerHTML="rangkaian kelab eko";	
+ document.getElementById("prof_i_am_label").innerHTML="Yo soya";	
+ document.getElementById("prof_interests_label").innerHTML="Kepentingan";	
+ document.getElementById("prof_submit_label").value="Simpan perubahan ini";		
+ document.getElementById("prof_wildlife_interface_label").innerHTML="Antara muka manusia-hidupan liar";		
+ document.getElementById("prof_is_orgrep_label").innerHTML="wakil organisasi";
+}	
+	
+
+function updateprofile(){	  
+	        event.preventDefault()
+		var prof_name = document.querySelector('#prof_name').value;
+		var prof_firstname = document.querySelector('#prof_firstname').value;
+		var prof_address = document.querySelector('#prof_address').value;
+		var prof_phone = document.querySelector('#prof_phone').value;
+		var prof_email = document.querySelector('#prof_email').value;
+		var prof_city = document.querySelector('#prof_city').value;
+		var prof_bio = document.querySelector('#prof_bio').value;
+		var prof_zip = document.querySelector('#prof_zip').value;
+		var prof_shop_for_carboncredit = document.querySelector('#prof_shop_for_carboncredit').checked;
+		var prof_sell_carboncredit = document.querySelector('#prof_sell_carboncredit').checked;
+		var prof_is_artist = document.querySelector('#prof_is_artist').checked;
+		var prof_is_student = document.querySelector('#prof_is_student').checked;
+		var prof_is_businessperson = document.querySelector('#prof_is_businessperson').checked;
+		var prof_may_be_a_teacher = document.querySelector('#prof_may_be_a_teacher').checked;
+		var prof_int_mentor_prog = document.querySelector('#prof_int_mentor_prog').checked;
+		var prof_aspiring_broker = document.querySelector('#prof_aspiring_broker').checked;
+		var prof_regenerative_farming = document.querySelector('#prof_regenerative_farming').checked;
+		var prof_wildlife_interface = document.querySelector('#prof_wildlife_interface').checked;
+		var prof_wish_ecoclub = document.querySelector('#prof_wish_ecoclub').checked;
+		var prof_is_footsoldier = document.querySelector('#prof_is_footsoldier').checked;
+		var prof_wildlife_interface = document.querySelector('#prof_wildlife_interface').checked;
+	        var prof_is_orgrep = document.querySelector('#prof_is_orgrep').checked;
+		//privacy.resistFingerprinting.reduceTimerPrecision.microseconds =111;
+		const currentTimeInSeconds=Math.floor(Date.now()/1000);
+  		var user = localStorage.getItem("user");									
+		localStorage.setItem("profile_"
+				     + user , currentTimeInSeconds + ","
+				     + prof_name + "," + prof_firstname
+				     + "," + prof_email + "," + prof_phone + "," + prof_bio
+				     + "," + prof_address + "," + prof_city
+				     + "," + prof_zip + "," + prof_shop_for_carboncredit
+			             + "," + prof_sell_carboncredit + "," + prof_is_artist
+				     + "," + prof_is_student + "," + prof_is_businessperson
+				     + "," + prof_is_orgrep
+				     + "," + prof_may_be_a_teacher + "," + prof_int_mentor_prog
+				     + "," + prof_aspiring_broker
+				     + "," + prof_regenerative_farming + "," +  prof_is_footsoldier
+				     + "," + prof_wish_ecoclub + "," + prof_wildlife_interface );
+
+				/*
+				vt.error("&#x1F44D;", {
+				    title: "Profile updated",
+				    position: "bottom-center",
+				    callback: function () {
+					vt.success()
+				    }
+				})
+				*/
+					
+	// udpated response
+	// document.getElementById("prof_submit_label").innerHTML = "Profile updated.";
+}	  	
+			
+	
+//  eco ops app - leafet map item submission	
+function furbur() { 
+		var density_element = document.getElementById('density');
+		var rating_element = document.getElementById('rating');
+		var descrip_element = document.getElementById('descrip'); 
+		var datalayer_element = document.getElementById('datalayerid');
+		var featuretype_element = document.getElementById('featuretype');
+		var latlong_element = document.getElementById('latlong');
+//		console.log(latlong_element.value);
+		
+		var latlong_element = latlong_element.value.replaceAll("LatLng("," [");
+		latlong_element = latlong_element.replaceAll(")","]");
+//		console.log("["+latlong_element+" ]");
+
+
+//  attempt register value for selected circle radius
+//		var radius_element = document.getElementById('radius');
+
+	/*	if ( radius_element) {		
+			console.log("radius_element");
+			console.log(radius_element);
+		}*/
+		// generate specific polyline output
+		// generate specific circle and marker one point output
+
+
+		// save data string to localstorage
+		localStorage.setItem(featuretype_element.value+datalayer_element.value, "{ \"data\": ["+ latlong_element +"] , \"density\":[\""+density_element.value+"\"],\"rating\":[\""+rating_element.value+"\"],\"description\":[\""+descrip_element.value+"\"],\"featureid\":[\""+datalayer_element.value+"\"],\"featuretype\":[\""+featuretype_element.value+"\"] }");
+
+		var tempindex = localStorage.getItem("leafletFeatureIndex");
+		console.log('tempindex' + tempindex);
+		if (tempindex !== null ) {
+		         localStorage.setItem("leafletFeatureIndex", tempindex +","+featuretype_element.value+datalayer_element.value);
+		} else { localStorage.setItem("leafletFeatureIndex", featuretype_element.value+datalayer_element.value);
+				 tempindex = featuretype_element.value+datalayer_element.value;
+		}  
+
+	// show data from popup form
+	//
+	//
+	// TODO add edit and delete ( polygon and marker) buttons here
+	//var tempindex = localStorage.getItem("leafletFeatureIndex");
+		const indexedPolygons = tempindex.split(',');
+		console.log('indexedPolygons');
+		console.log(indexedPolygons);
+
+
+	// popup response 
+	//
+	//
+	// respond to popup marker data changes after submit popup form
+	//
+        // TODO: 6-1-2022 gw update the label for this object in the map object here
+	//     so that new clicks dont give you a form any longer
+
+			document.getElementById("markerform").innerHTML = "<b>"+ featuretype_element.value + datalayer_element.value+"</b><BR>Density:"+
+			density_element.value+"<BR>Description:"+descrip_element.value+
+			"<BR>Tags:"+
+			rating_element.value;
+
+	// draw new polygon derived from polyline 
+
+				// list all polygons
+				//
+				// 1. make list of all first and last elements last lines
+				//
+				// 2. check to see if any points are very close together, 
+				//				getDistance(from, to);				
+				//				function getDistance(from, to)
+				//				{
+				//					var container = document.getElementById('distance');
+				//					container.innerHTML = ("New Delhi to Mumbai - " + (from.distanceTo(to)).toFixed(0)/1000) + ' km';
+				//				}
+
+				if (featuretype_element.value === "polyline") {
+
+					// get index
+					var tempindex = localStorage.getItem("leafletFeatureIndex");
+					const newArr = tempindex.split(',');
+					var n = 0;
+					var newPolygon = "";
+					newArr.forEach(element => {
+
+						if (element.includes("polyline")) {
+							// list only data from polylines
+							const loopi = localStorage.getItem(element);
+							console.log("loop")
+							console.log(n)
+							console.log(loopi)
+							const obj = JSON.parse(loopi)
+							console.log("obj.data")
+							console.log(obj.data)
+							console.log(obj.data[0])
+							console.log(obj.data[2])
+							if ( n === 0)
+								newPolygon = "[" + obj.data[0] + "," + obj.data[2]
+							else 
+								newPolygon = newPolygon + "," + obj.data[2]
+							n = n+1
+						}
+					})
+					newPolygon = newPolygon + "]"
+					console.log("newPolygon")
+					console.log(newPolygon)
+				}
+				if (newPolygon){
+					var polygon0 =	 L.polygon(newPolygon).bindPopup("<h4>New Polygon");
+					var drawnItems = new L.FeatureGroup();
+					drawnItems.addLayer(polygon0);
+				}
+
+	}; 
+
+ 
+
+	
+document.addEventListener('click',function(e){
+
+  
+
+    if(e.target && e.target.id== 'shownum'){
+          //do something
+ 
+		let currentNumber = 0;
+		let isIncreasing = true;
+		const shownum = document.querySelector('.shownum');
+
+		//showNumberP.textContent = currentNumber;
+		shownum.onclick = () => {
+			
+			if (isIncreasing) {
+				currentNumber++;
+				if (currentNumber == 5) isIncreasing = false;
+			} else {
+				currentNumber--;
+				if (currentNumber == 0) isIncreasing = true;
+			}
+			
+		shownum.src = "/icons/density"+currentNumber+".svg";
+
+		}
+
+	}
+});
+
+
+ 
+
+		function check_value()
+		{
+			switch(document.test.density.value)
+			{
+				case "zero":
+				 
+					document.getElementById("").innerHTML = "<img src='icons/density0.svg' width=183>";
+					break;
+	
+				case "one":
+				 
+					document.getElementById("imagedest").innerHTML = "<img src='icons/density1.svg' width=183>";
+					break;
+	
+				case "two":
+	
+					document.getElementById("imagedest").innerHTML = "<img src='icons/density2.svg' width=183>"; 
+					break;
+	
+				case "three":
+	
+					document.getElementById("imagedest").innerHTML = "<img src='icons/density3.svg' width=183>"; 
+					break;
+	
+				case "three":
+	
+					document.getElementById("imagedest").innerHTML = "<img src='icons/density3.svg' width=183>"; 
+					break;				
+	
+				case "four":
+	
+					document.getElementById("imagedest").innerHTML = "<img src='icons/density4.svg' width=183>"; 
+					break;
+	
+				case "five":
+	
+					document.getElementById("imagedest").innerHTML = "<img src='icons/density5.svg' width=183>"; 
+					break;
+	
+				}
+		}
+			</script>
+			<script src="/tablesort.min.js"></script>
+			<script>document.querySelector('.table-sortable').tsortable()</script> 
+			      			      
+		        <script>
+			
+			function geolocate(){	  
+
+			    if (navigator.geolocation) {
+			      navigator.geolocation.getCurrentPosition(position => {
+				const lat = position.coords.latitude;
+				const long = position.coords.longitude;
+				console.log('Latitude: ', lat);
+				console.log('Longitude: ', long);
+			      }, error => {
+				console.log('Need access to get location.');
+			      });
+			    }		
+			}
+							
+				
+				
+				
+ 
+				
+					
+				
+				
+			// load existing data as page loads
+			var idx = localStorage.getItem("plasticsCheckinIndex");									
+			if (typeof idx === 'undefined' || idx === null) { } else { checkinLoadLocalstorageData(); }
+
+			function checkin0(){	  
+				event.preventDefault();				
+				var item = document.querySelector('#ldplastictype').value;
+				document.querySelector('#ldplastictype').value = "";
+				var name = document.querySelector('#ldprovider').value;
+				document.querySelector('#ldprovider').value = "";
+				var weightkg = document.querySelector('#ldweightkg').value;
+				document.querySelector('#ldweightkg').value = "";
+				var witness = document.querySelector('#ldwitness').value;
+				document.querySelector('#ldwitness').value = "";
+				var description = document.querySelector('#lddescription').value;
+				document.querySelector('#lddescription').value = "";
+				//privacy.resistFingerprinting.reduceTimerPrecision.microseconds =111;
+				const currentTimeInSeconds=Math.floor(Date.now()/1000);
+				
+				
+				localStorage.setItem("plastics_checkin"+currentTimeInSeconds, item+" , "+weightkg+", "+name+", "+witness+", "+description );									
+				var idx = localStorage.getItem("plasticsCheckinIndex");									
+	
+					if (typeof idx === 'undefined' || idx === null) {
+						localStorage.setItem("plasticsCheckinIndex", "plastics_checkin"+currentTimeInSeconds);									
+					} else {
+						idx = idx+",";
+						localStorage.setItem("plasticsCheckinIndex", idx+ "plastics_checkin"+currentTimeInSeconds);									
+					}
+				// updata existing data display after form submit
+				document.querySelector('#checkin0response').value = "Entry has been recorded";
+				checkinLoadLocalstorageData()
+				};
+				
+				
+				
+				
+				
+			//var checkinlist = document.querySelector('#plastic_checkins').value;											
+			function checkinLoadLocalstorageData(){	
+				
+				var checkinTableContentLoop = "";
+				var checkinIndex = localStorage.getItem("plasticsCheckinIndex");
+				try {  
+					const checkinArr = checkinIndex.split(',');
+									
+					checkinArr.forEach(element => {
+						//checkinList = element+"<BR><div style=\"background:#efefef\">"+
+							element0 = localStorage.getItem(element);
+							const splitArr = element0.split(',');
+  							const dateof = element.split('plastics_checkin');
+							//dateof = dateToJulianNumber(dateof[1])
+							checkinTableContentLoop = "<tr><td>"+dateof[1]+"</td><td>"+splitArr[0]+"</td><td>"+splitArr[1]+"</td><td>"+splitArr[2]+"</td><td>"+splitArr[3]+"</td><td>"+splitArr[4]+"</td></tr>" + checkinTableContentLoop;
+					});	      	  
+
+				//var checkinList = "<b>Current checkins:</b><BR>"+checkinList;
+				//document.getElementById("plastic_checkins").innerHTML=checkinList;
+
+				console.log("hello0");
+				document.getElementById("checkinTableContent").innerHTML=checkinTableContentLoop;
+				console.log("hello2");
+					
+				} catch { 
+					
+					const checkinArr = checkinIndex; 
+					checkinTableContentLoop = "<tr><td> ~ </td><td> ~ </td><td> ~ </td><td> ~ </td><td> ~ </td><td> ~ </td></tr>";
+					document.getElementById("checkinTableContent").innerHTML=checkinTableContentLoop;
+				}
+				
+			}				
+
+				
+			checkinLoadLocalstorageData();
+				 
+
+
+				
+	 		function checkin1(){	 
+				alert("yo")
+				event.preventDefault();				
+				var item = document.querySelector('#ldcompostabletype').value;
+				document.querySelector('#ldcompostabletype').value = "";
+				var name = document.querySelector('#ldcompostableprovider').value;
+				document.querySelector('#ldcompostableprovider').value = "";
+				var weightkg = document.querySelector('#ldcompostableweightkg').value;
+				document.querySelector('#ldcompostableweightkg').value = "";
+				var witness = document.querySelector('#ldcompostablewitness').value;
+				document.querySelector('#ldcompostablewitness').value = "";
+				var description = document.querySelector('#ldcompostabledescription').value;
+				document.querySelector('#ldcompostabledescription').value = "";
+				//privacy.resistFingerprinting.reduceTimerPrecision.microseconds =111;
+				const currentTimeInSeconds=Math.floor(Date.now()/1000);
+				
+				
+				localStorage.setItem("compostable_checkin"+currentTimeInSeconds, item+" , "+weightkg+", "+name+", "+witness+", "+description );									
+				var idx = localStorage.getItem("compostableCheckinIndex");									
+	
+					if (typeof idx === 'undefined' || idx === null) {
+						localStorage.setItem("compostableCheckinIndex", "compostable_checkin"+currentTimeInSeconds);									
+					} else {
+						idx = idx+",";
+						localStorage.setItem("compostableCheckinIndex", idx+ "compostable_checkin"+currentTimeInSeconds);									
+					}
+				// updata existing data display after form submit
+					document.querySelector('#checkin1response').value = "Entry has been recorded";
+				        checkin1LoadLocalstorageData()
+				};				
+				
+			function checkin1LoadLocalstorageData(){	
+				
+				const currentTimeInSeconds=Math.floor(Date.now()/1000);
+				var checkinTableContentLoop = "";
+				var checkinIndex = localStorage.getItem("compostableCheckinIndex");
+				try {  
+
+					const checkinArr = checkinIndex.split(',');
+						checkinArr.forEach(element => {
+							//checkinList = element+"<BR><div style=\"background:#efefef\">"+
+								element0 = localStorage.getItem(element);
+								const splitArr = element0.split(',');
+								const dateof = element.split('compost_checkin');
+								const dateof0 = dateToJulianNumber(dateof[0])
+								checkinTableContentLoop = "<tr><td>"+dateof0+"</td><td>"+splitArr[0]+"</td><td>"+splitArr[1]+"</td><td>"+splitArr[2]+"</td><td>"+splitArr[3]+"</td><td>"+splitArr[4]+"</td></tr>" + checkinTableContentLoop;
+						});	 
+				} catch(err) {
+					checkinTableContentLoop = "<tr><td>~</td><td>~</td><td>~</td><td>~</td><td>~</td><td>~</td></tr>";
+	
+						
+					document.getElementById("checkin1TableContent").innerHTML=checkinTableContentLoop;
+				}	
+			}					
+				        
+			checkin1LoadLocalstorageData()
+				
+				
+				
+			function maintcheckin0(){	  
+				event.preventDefault();				
+				var item = document.querySelector('#mainttype').value;
+				document.querySelector('#mainttype').value = "";
+				var name = document.querySelector('#maintprovider').value;
+				document.querySelector('#maintprovider').value = "";
+				var weightkg = document.querySelector('#durationhours').value;
+				document.querySelector('#durationhours').value = "";
+				var witness = document.querySelector('#maintwitness').value;
+				document.querySelector('#maintwitness').value = "";
+				var description = document.querySelector('#maintnotes').value;
+				document.querySelector('#maintnotes').value = "";
+				//privacy.resistFingerprinting.reduceTimerPrecision.microseconds =111;
+				const currentTimeInSeconds=Math.floor(Date.now()/1000);
+				
+				
+				localStorage.setItem("maint_checkin"+currentTimeInSeconds, item+" , "+weightkg+", "+name+", "+witness+", "+description );									
+				var idx = localStorage.getItem("maintCheckinIndex");									
+	
+					if (typeof idx === 'undefined' || idx === null) {
+						localStorage.setItem("plasticsCheckinIndex", "plastics_checkin"+currentTimeInSeconds);									
+					} else {
+						idx = idx+",";
+						localStorage.setItem("plasticsCheckinIndex", idx+ "plastics_checkin"+currentTimeInSeconds);									
+					}
+				// updata existing data display after form submit
+				maintLoadLocalstorageData()
+				};
+				
+			function maintLoadLocalstorageData(){	
+				
+				var maintTableContentLoop = "";
+				var maintIndex = localStorage.getItem("maintCheckinIndex");
+				if (typeof idx === 'undefined' || idx === null) {
+					maintIndex = "date,arr0,arr1,...,arr3,arr4,arr5"
+					
+				} else {
+				const maintArr = maintIndex.split(',');
+					maintArr.forEach(element => {
+							element0 = localStorage.getItem(element);
+							const splitArr = element0.split(',');
+  							const dateof = element.split('plastics_checkin');
+							//dateof = dateToJulianNumber(dateof[1])
+							maintTableContentLoop = "<tr><td>"+dateof[1]+"</td><td>"+splitArr[0]+"</td><td>"+splitArr[1]+"</td><td>"+splitArr[2]+"</td><td>"+splitArr[3]+"</td><td>"+splitArr[4]+"</td></tr>" + checkinTableContentLoop;
+					});	      	  
+
+				//var checkinList = "<b>Current checkins:</b><BR>"+checkinList;
+				//document.getElementById("plastic_checkins").innerHTML=checkinList;
+
+				console.log("hello0");
+
+				document.getElementById("maintTableContent").innerHTML=maintTableContentLoop;
+
+				console.log("hello2");
+			}		
+			}		
+				
+
+			var idx = localStorage.getItem("maintCheckinIndex");									
+			if (typeof idx === 'undefined' || idx === null) { maintLoadLocalstorageData(); }				
+								
+			
+
+			function dateToJulianNumber(JD){
+
+			   var y = 4716;
+			   var v = 3;
+			   var j = 1401;
+			   var u =  5;
+			   var m =  2;
+			   var s =  153;
+			   var n = 12;
+			   var w =  2;
+			   var r =  4;
+			   var B =  274277;
+			   var p =  1461;
+			   var C =  -38;
+			   var f = JD + j + Math.floor((Math.floor((4 * JD + B) / 146097) * 3) / 4) + C;
+			   var e = r * f + v;
+			   var g = Math.floor((e % p) / r);
+			   var h = u * g + w;
+			   var D = Math.floor((h % s) / u) + 1;
+			   var M = ((Math.floor(h / s) + m) % n) + 1;
+			   var Y = Math.floor(e / p) - y + Math.floor((n + m - M) / n) ;
+			   return new Date(Y,M-1,D);
+			}
+
+				
+				
+ 
+				
+				const columns = document.querySelectorAll(".column");
+
+					columns.forEach((column) => {
+					    new Sortable(column, {
+					        group: "shared",
+        					animation: 150,
+					        ghostClass: "blue-background-class"
+					    });
+				});
+				
+				
+				
+							
+				
+		        </script>			      			      			      			      			      			      			      
+  <script src="/js/vanilla-toast.min.js"></script>
+	
+
+</html>
