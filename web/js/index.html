@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>Eco Ops App - add a witness</title>
+  <link rel="stylesheet" href="/js/normalize.min.css">
+  <link rel="stylesheet" href="/js/style.css">
+  <link rel="stylesheet" href="/js/sigpadstyle.css">
+</head>
+<body>
+<div class="container">
+  <div class="interior">
+        <a class="btn" href="../page.html?page=orodoha/" id="returnhome">Return to Eco Ops</a>
+
+        <a class="btn" href="#open-modal">👋 Add a Witness</a>
+  </div>
+</div>
+<div id="open-modal" class="modal-window">
+  <div>
+    <a href="#" title="Close" class="modal-close">Close</a>
+    <br>
+    <div><small>I bear witness to the truth of these statements.</small></div>
+ 
+
+     <div id="signature-pad" class="m-signature-pad">
+    <div class="m-signature-pad--body">
+      <canvas></canvas>
+    </div>
+    <div class="m-signature-pad--footer">
+      <div class="description">Sign above</div>
+      <div class="left">
+        <button type="button" class="button clear" data-action="clear">Clear</button>
+        <button type="button" class="button debug" data-action="debug-points">Draw points</button>
+      </div>
+      <div class="right">
+        <button type="button" style="display:none;" class="button save" data-action="save-svg">Save</button>
+      </div>
+    </div>
+  </div>
+  <div id=witnessformdiv>
+    <BR><BR><BR><BR><BR><BR><BR>
+          <h1><BR><BR><BR></h1>
+    <div>Verify climate credit worthy actions.</div>
+      
+    <form id=witness1modal>
+    Name: <input type=text id=witness1name><BR>
+          <input type=hidden id="sigimg">
+
+   
+    Phone: <input type=text id=witness1phone><BR>
+    Email: <input type=text id=witness1email><BR>
+    Address: <input type=text id=witness1address><BR>
+    Organization: <input type=text id=witness1org><BR>
+    Affiliation: <input type=text id=witness1affiliation><BR>
+        <button type="button" id="newwitness" class="button save">Save</button>
+      
+    </form>
+        
+  </div>  
+        
+      
+      
+      
+  </div>
+</div>
+</div>
+    
+    
+<!-- partial -->
+  <script  src="/js/sigpadscript.js"></script>
+    <script>
+      
+      document.getElementById("returnhome").addEventListener("click", function () {
+          window.history.go(-1)
+      });
+      
+      document.getElementById("newwitness").addEventListener("click", function () {
+        
+          var referrer = localStorage.getItem("user");
+          var witness1name = document.getElementById('witness1name').value;
+          var witness1phone = document.getElementById('witness1phone').value;
+          var witness1email = document.getElementById('witness1email').value;
+          var witness1org = document.getElementById('witness1org').value;
+          var witness1address = document.getElementById('witness1address').value;
+          var witness1affiliation = document.getElementById('witness1affiliation').value;
+          var witness1eventdate = Date.now()/1000;
+          var sigimg = signaturePad.toDataURL('image/svg+xml');
+                  
+          localStorage.setItem(referrer + "_" + witness1name + "_" + witness1eventdate, " \"name\": ["+ witness1name +"] , \"Date\": ["+ witness1eventdate +"] , \"phone\":[\""+witness1phone+"\"],\"email\":[\""+witness1email+"\"],\"sigimg\":[\""+sigimg+"\"],\"referer\":[\""+referrer+"\"],\"witness1org\":[\""+witness1org+"\"],\"witness1address\":[\""+witness1address+"\"], \"witness1affiliation\": [\""+witness1affiliation+"\"]");
+                 	                                                      
+         // add to witnessIndex
+         var witnessList = localStorage.getItem("ecoopswitnessIndex");
+         var witnessList =  witnessList + "," + referrer + "_" + witness1name + "_" + witness1eventdate;  
+        
+         // add to index of ecoopswitnesses
+         localStorage.setItem("ecoopswitnessIndex", witnessList );
+
+      });
+    </script> 
+</body>
+</html>
